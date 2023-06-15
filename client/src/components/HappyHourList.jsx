@@ -5,7 +5,7 @@ function HappyHourList() {
 
 	const getHappyHours = async () => {
 		try {
-			const response = await fetch("http://localhost:3001/api/yelp", {
+			const response = await fetch("/api/yelp", {
 				method: "GET",
 				headers: {
 					"Content-Type": "application/json",
@@ -27,8 +27,8 @@ function HappyHourList() {
 
 	return (
 		<div>
-			<p>This is where the list will go temporarily</p>
-			<ul>
+			{/* make a ul with no styling */}
+			<ul style={{ listStyleType: "none" }}>
 				{happyHours.map((happyHour) => (
 					<li key={happyHour.id}>
 						<h2>
@@ -37,9 +37,10 @@ function HappyHourList() {
 							</a>
 						</h2>
 						<p>
-							Rating: {happyHour.rating} after {happyHour.review_count} reviews
+							Rating: {happyHour.rating}/5 after {happyHour.review_count} reviews
 						</p>
-						<p>{happyHour.display_address}</p>
+						<p>{happyHour.location.display_address[0]}</p>
+						<p>{happyHour.location.display_address[1]}</p>
 						<p>{!happyHour.is_closed ? "Open now" : "Closed"}</p>
 					</li>
 				))}
