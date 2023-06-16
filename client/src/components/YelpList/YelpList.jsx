@@ -1,29 +1,23 @@
 import React, { useState, useEffect } from "react";
+import getHappyHours from "../../utils/yelpRequest";
 
-function HappyHourList() {
+function YelpList({ zipCode }) {
 	const [happyHours, setHappyHours] = useState([]);
 
-	const getHappyHours = async () => {
-		try {
-			const response = await fetch("/api/yelp", {
-				method: "GET",
-				headers: {
-					"Content-Type": "application/json",
-				},
-			});
-
-			const data = await response.json();
-			console.log(data);
-
-			setHappyHours(data.businesses);
-		} catch (err) {
-			console.error(err.message);
-		}
-	};
-
 	useEffect(() => {
-		getHappyHours();
-	}, []);
+		if (!zipCode) {
+			return;
+		}
+		const fetchData = async () => {
+			try {
+				const result = await getHappyHours(zipCode);
+				setHappyHours(result);
+			} catch (error) {
+				console.error(error);
+			}
+		};
+		fetchData();
+	}, [zipCode]);
 
 	return (
 		<div>
@@ -49,4 +43,4 @@ function HappyHourList() {
 	);
 }
 
-export default HappyHourList;
+export default YelpList;

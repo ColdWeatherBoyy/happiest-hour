@@ -1,13 +1,12 @@
-import React, { useState } from "react";
-import HappyHourList from "./components/HappyHourList";
-// import Clock from "./components/Clock/Clock";
+import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min";
+import Home from "./components/Home/Home";
 
 function App() {
 	return (
 		<>
-			<div>Happiest Hour</div>
-			{/* <Clock /> */}
-			<HappyHourList />
+			<Home />
 		</>
 	);
 }
