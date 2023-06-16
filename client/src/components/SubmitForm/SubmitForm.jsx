@@ -3,19 +3,17 @@ import { Form, Button } from "react-bootstrap";
 
 const SubmitForm = ({ onClick }) => {
 	const [zipCode, setZipCode] = useState("");
-	// const zipCode = /^\d{5}$/;
-	// const zipCodeInput = document.getElementById("zipCode");
-	// if (zipCodeInput.value.match(zipCode)) {
-	// 	alert("Valid zip code");
-	// 	return true;
-	// } else {
-	// 	alert("Invalid zip code");
-	// 	return false;
-	// }
 
-	// useEffect(() => {
-	// 	console.log(zipCode);
-	// }, [zipCode]);
+	const validateZipCode = (zipCode) => {
+		const zipCodeRegex = /^\d{5}$/;
+		return zipCodeRegex.test(zipCode);
+	};
+
+	const handleOnClick = () => {
+		if (validateZipCode(zipCode)) {
+			onClick(zipCode);
+		} else alert("Please enter a valid zip code");
+	};
 
 	return (
 		<>
@@ -32,7 +30,7 @@ const SubmitForm = ({ onClick }) => {
 						Don't you want to know where to drink?
 					</Form.Text>
 				</Form.Group>
-				<Button variant="primary" onClick={() => onClick(zipCode)}>
+				<Button variant="primary" onClick={handleOnClick}>
 					Let's Get Happy
 				</Button>
 			</Form>
