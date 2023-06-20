@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import SubmitForm from "../SubmitForm/SubmitForm";
 import YelpList from "../YelpList/YelpList";
+import Clock from "../Clock/Clock";
 
 const Home = () => {
 	// const [isClicked, setIsClicked] = useState(false);
@@ -13,6 +14,7 @@ const Home = () => {
 	return (
 		<>
 			<h1>Happiest Hour</h1>
+			<Clock />
 			<SubmitForm onClick={(zipCode) => setSubmitZip(zipCode)} />
 			<YelpList zipCode={submitZip} />
 		</>
