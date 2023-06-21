@@ -2,19 +2,14 @@
     --radius: 60vw;
 }
 
-#clock {
+.clock {
     border: 3px solid black;
     background-color: rgb(255, 255, 255);
     border-radius: 50%;
     margin: 50px auto; /* top & bottom, right & left */
-    width: var(--radius);
-    height: var(--radius);
+    /* width: var(--radius);
+    height: var(--radius); */
     padding-bottom: 10em;
-}
-
-#clock-center {
-    border: 3px solid black;
-    height: var(--radius);
 }
 
 @media (min-width: 769px) {
