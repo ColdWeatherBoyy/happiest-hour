@@ -17,21 +17,21 @@ const SubmitForm = ({ onClick }) => {
 
 	return (
 		<>
-			<Form>
-				<Form.Group className="mb-3" controlId="zipCode">
-					<Form.Label>Zip Code</Form.Label>
+			<Form className='d-flex flex-column align-items-center'>
+				<Form.Group className="mb-2 col-5 col-sm-3 col-lg-2" controlId="zipCode">
+					{/* <Form.Label>Zip Code</Form.Label> */}
 					<Form.Control
 						type="text"
 						placeholder="Enter Zip Code"
 						value={zipCode}
 						onChange={(e) => setZipCode(e.target.value)}
 					/>
-					<Form.Text className="text-muted">
+					{/* <Form.Text className="text-muted">
 						Don't you want to know where to drink?
-					</Form.Text>
+					</Form.Text> */}
 				</Form.Group>
 				<Button variant="primary" onClick={handleOnClick}>
-					Let's Get Happy
+					Let's Get Happy!
 				</Button>
 			</Form>
 		</>
