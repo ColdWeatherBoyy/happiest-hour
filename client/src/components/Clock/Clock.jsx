@@ -1,7 +1,9 @@
+import clockStyle from './Clock.css'
+
 const Clock = () => {
-    <div id='clock'>
-        <h3>.</h3>
-    </div>
+    return(
+        <div className='clock'></div>
+    )
 }
 
 export default Clock;
