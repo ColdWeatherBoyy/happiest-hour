@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import SubmitForm from "../SubmitForm/SubmitForm";
 import YelpList from "../YelpList/YelpList";
 import Clock from "../Clock/Clock";
 import Title from "../Title/Title";
@@ -16,7 +15,6 @@ const Home = () => {
 		<>
 			<Title />
 			<Clock />
-			<SubmitForm onClick={(zipCode) => setSubmitZip(zipCode)} />
 			<YelpList zipCode={submitZip} />
 		</>
 	);
