@@ -5,7 +5,7 @@ import SubmitForm from "../SubmitForm/SubmitForm";
 
 const Clock = () => {
     let { width } = useWindowDimensions();
-    let diameter = width/2;
+    let diameter = width/1.5;
 
     return(
         <div className='clock' style={{width: diameter, height: diameter}}>
