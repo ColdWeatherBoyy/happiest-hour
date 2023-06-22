@@ -1,13 +1,41 @@
-const NumberItem = ({ numbersArr }) => {
+import { useState } from "react";
+
+const NumberItem = () => {
+    let [x, setX] = useState(0);
+    let [y, setY] = useState(0);
+
+
+    // let i
+    // for(i=0 ; i<13 ; i++) {
+    //     setX(x+16);
+    //     setY(y+16);
+    // }
+    console.log('x-value is: '+ x + ' and y-value is: '+ y)
+
     const calcTranslation = () => {
 
-        if(numbersArr[i] <= 6) {
-            const x = () => {
-                x = x+15
-            }
-        } else if(6 < numbersArr[i] <= 11) {
-            let x = -1*x
-        }
+        // for(x=0 ; x<13 ; x++) {
+        //     setX(x+16);
+        // }
+        // for(y=0 ; y<13 ; y++){
+        //     setY(y+16);
+        // }
+
+
+        // numbersArr.map((item) => {
+            
+        //     return(
+        //         <p style={{transform: `translate(${x}%, ${y}%)` }}></p>
+        //     )
+        // })
+
+        // if((numbersArr[i] < numbersArr[4]) && (numbersArr[i] > numbersArr[9])) {
+        //     setX(x + 16);
+        // } else if((numbersArr[i] > numbersArr[3]) && (numbersArr[i] < numbersArr[10])) {
+        //     setX()
+        // } else {
+        //     x = 0
+        // }
     }
 
     return(
@@ -18,10 +46,4 @@ const NumberItem = ({ numbersArr }) => {
     )
 }
 
-// I need the <p> with the numbers showing up from the numbersArr to each 
-// have a {{style: transform: translate(x,y)}}
-
-// so this component (NumberItem) should return a <p style={{transform: "{x}%","{y}%"}}>{num}</p>
-
-// maybe try setting all the numbers in the middle, then they only need to travel 50% of 
-// the container (the circle) and x or y units up, down, left, or right.
+export default NumberItem;
