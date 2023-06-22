@@ -1,9 +1,8 @@
-import isPostalCode from "validator/lib/isPostalCode";
+// import isPostalCode from "validator/es/lib/isPostalCode";
 
 const validateZipCode = (submittedZip) => {
-	// const zipCodeRegex = /^\d{5}$/;
-	// return zipCodeRegex.test(submittedZip);
-	return isPostalCode(submittedZip, "US");
+	const zipCodeRegex = /^\d{5}$/;
+	return zipCodeRegex.test(submittedZip);
 };
 
 export default validateZipCode;

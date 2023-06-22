@@ -3,6 +3,7 @@ import getHappyHours from "../../utils/yelpRequest";
 
 function YelpList({ submittedZip }) {
 	const [happyHours, setHappyHours] = useState([]);
+	const [count, setCount] = useState(0);
 
 	useEffect(() => {
 		if (!submittedZip) {
@@ -11,6 +12,15 @@ function YelpList({ submittedZip }) {
 		const fetchData = async () => {
 			try {
 				const result = await getHappyHours(submittedZip);
+				if (!result && count < 2) {
+					alert("Was that really a valid Zip Code? Try again...");
+					setCount(count + 1);
+					return;
+				} else if (!result && count >= 2) {
+					alert("Maybe there just aren't any happy hours nearby ¯\\_(ツ)_/¯");
+					return;
+				}
+
 				setHappyHours(result);
 			} catch (error) {
 				console.error(error);
