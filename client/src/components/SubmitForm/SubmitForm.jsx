@@ -17,10 +17,10 @@ const SubmitForm = ({ setSubmittedZip }) => {
 		<>
 			<Form
 				id="submit"
-				className="d-flex flex-column align-items-center"
+				className="d-flex flex-column align-items-center text-center"
 				onSubmit={handleSubmit}
 			>
-				<Form.Group className="mb-2 col-5 col-sm-3 col-lg-2" controlId="zipCode">
+				<Form.Group className="mb-2 col-8" controlId="zipCode">
 					<Form.Label>Zip Code</Form.Label>
 					<Form.Control
 						type="text"
@@ -29,8 +29,8 @@ const SubmitForm = ({ setSubmittedZip }) => {
 						onChange={(e) => setZipCode(e.target.value)}
 					/>
 				</Form.Group>
-				<Button variant="primary" type="submit">
-					Let's Get Happy!
+				<Button className="col-5" variant="primary" type="submit">
+					Search
 				</Button>
 			</Form>
 		</>
