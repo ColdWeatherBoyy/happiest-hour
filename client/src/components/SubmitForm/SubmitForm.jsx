@@ -1,15 +1,25 @@
 import "../Clock/Clock.css";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Form, Button } from "react-bootstrap";
 import validateZipCode from "../../utils/validateZip";
 
 const SubmitForm = ({ setSubmittedZip }) => {
 	const [zipCode, setZipCode] = useState("");
+	const previousZipCodeRef = useRef("");
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
+		if (!zipCode) return alert("Please enter a zip code");
 		if (validateZipCode(zipCode)) {
-			setSubmittedZip(zipCode);
+			if (zipCode === previousZipCodeRef.current) {
+				setSubmittedZip("");
+				setTimeout(() => {
+					setSubmittedZip(zipCode);
+				}, 0);
+			} else {
+				setSubmittedZip(zipCode);
+				previousZipCodeRef.current = zipCode;
+			}
 		} else alert("Please enter a valid zip code");
 	};
 
