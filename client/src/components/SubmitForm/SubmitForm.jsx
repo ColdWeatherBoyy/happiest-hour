@@ -1,24 +1,25 @@
 import "../Clock/Clock.css";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
+import validateZipCode from "../../utils/validateZip";
 
-const SubmitForm = ({ onClick }) => {
+const SubmitForm = ({ setSubmittedZip }) => {
 	const [zipCode, setZipCode] = useState("");
 
-	const validateZipCode = (zipCode) => {
-		const zipCodeRegex = /^\d{5}$/;
-		return zipCodeRegex.test(zipCode);
-	};
-
-	const handleOnClick = () => {
+	const handleSubmit = (event) => {
+		event.preventDefault();
 		if (validateZipCode(zipCode)) {
-			onClick(zipCode);
+			setSubmittedZip(zipCode);
 		} else alert("Please enter a valid zip code");
 	};
 
 	return (
 		<>
-			<Form id="submit" className="d-flex flex-column align-items-center">
+			<Form
+				id="submit"
+				className="d-flex flex-column align-items-center"
+				onSubmit={handleSubmit}
+			>
 				<Form.Group className="mb-2 col-5 col-sm-3 col-lg-2" controlId="zipCode">
 					<Form.Label>Zip Code</Form.Label>
 					<Form.Control
@@ -28,7 +29,7 @@ const SubmitForm = ({ onClick }) => {
 						onChange={(e) => setZipCode(e.target.value)}
 					/>
 				</Form.Group>
-				<Button variant="primary" onClick={handleOnClick}>
+				<Button variant="primary" type="submit">
 					Let's Get Happy!
 				</Button>
 			</Form>

@@ -1,23 +1,23 @@
 import React, { useState, useEffect } from "react";
 import getHappyHours from "../../utils/yelpRequest";
 
-function YelpList({ zipCode }) {
+function YelpList({ submittedZip }) {
 	const [happyHours, setHappyHours] = useState([]);
 
 	useEffect(() => {
-		if (!zipCode) {
+		if (!submittedZip) {
 			return;
 		}
 		const fetchData = async () => {
 			try {
-				const result = await getHappyHours(zipCode);
+				const result = await getHappyHours(submittedZip);
 				setHappyHours(result);
 			} catch (error) {
 				console.error(error);
 			}
 		};
 		fetchData();
-	}, [zipCode]);
+	}, [submittedZip]);
 
 	return (
 		<div>
