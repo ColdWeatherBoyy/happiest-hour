@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import validateZipCode from "../../utils/validateZip";
 
-const SubmitForm = ({ setSubmittedZip, handleOnClick }) => {
+const SubmitForm = ({ setSubmittedZip }) => {
 	const [zipCode, setZipCode] = useState("");
 
 	const handleSubmit = (event) => {
@@ -29,7 +29,7 @@ const SubmitForm = ({ setSubmittedZip, handleOnClick }) => {
 						onChange={(e) => setZipCode(e.target.value)}
 					/>
 				</Form.Group>
-				<Button className="col-5" variant="primary" type="submit" onClick={handleOnClick}>
+				<Button className="col-5" variant="primary" type="submit">
 					Search
 				</Button>
 			</Form>
