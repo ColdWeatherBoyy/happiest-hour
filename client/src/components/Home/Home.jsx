@@ -5,17 +5,17 @@ import Title from "../Title/Title";
 
 const Home = () => {
 	// const [isClicked, setIsClicked] = useState(false);
-	const [submitZip, setSubmitZip] = useState("");
+	const [submittedZip, setSubmittedZip] = useState("");
 
 	useEffect(() => {
-		console.log(submitZip);
-	}, [submitZip]);
+		console.log(submittedZip);
+	}, [submittedZip]);
 
 	return (
 		<>
 			<Title />
-			<Clock setSubmitZip={setSubmitZip} />
-			<YelpList zipCode={submitZip} />
+			<Clock setSubmittedZip={setSubmittedZip} />
+			<YelpList submittedZip={submittedZip} />
 		</>
 	);
 };
