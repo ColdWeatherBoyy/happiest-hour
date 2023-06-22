@@ -1,15 +1,22 @@
+:root {
+    --diameter: 80vw;
+}
+
 .clock {
     border: 3px solid black;
     background-color: rgb(255, 255, 255);
     border-radius: 50%;
+    position: relative;
     margin: 50px auto; /* top & bottom, right & left */
-    padding-bottom: 10em;
+    width: var(--diameter);
+    height: var(--diameter);
 }
 
 #submit {
-    position: relative;
+    position: absolute;
     top: 50%;
-    transform: translate(0, 44%); /* translate(horizontal, vertical) */
+    left: 50%;
+    transform: translate(-50%, -50%); /* translate(horizontal, vertical) */
 }
 
 @media (min-width: 769px) {

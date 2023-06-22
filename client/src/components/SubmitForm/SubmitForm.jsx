@@ -18,8 +18,8 @@ const SubmitForm = ({ onClick }) => {
 
 	return (
 		<>
-			<Form id="submit" className="d-flex flex-column align-items-center">
-				<Form.Group className="mb-2 col-5 col-sm-3 col-lg-2" controlId="zipCode">
+			<Form id="submit" className="d-flex flex-column align-items-center text-center">
+				<Form.Group className="mb-2 col-8" controlId="zipCode">
 					<Form.Label>Zip Code</Form.Label>
 					<Form.Control
 						type="text"
@@ -28,8 +28,8 @@ const SubmitForm = ({ onClick }) => {
 						onChange={(e) => setZipCode(e.target.value)}
 					/>
 				</Form.Group>
-				<Button variant="primary" onClick={handleOnClick}>
-					Let's Get Happy!
+				<Button className="col-5" variant="primary" onClick={handleOnClick}>
+					Search
 				</Button>
 			</Form>
 		</>
