@@ -1,9 +1,10 @@
 import clockStyle from './Clock.css'
+import { useState } from 'react';
 
 const Numbers = ({ nums }) => {
-    for(i=1 ; i<13 ; i++)
+    
     return(
-        <div>{nums}</div>
+        <p>{nums}</p>
     )
 }
 
