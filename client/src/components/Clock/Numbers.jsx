@@ -1,4 +1,4 @@
-import clockStyle from './Clock.css'
+import './Clock.css'
 import { useState } from 'react';
 
 const Numbers = ({ nums }) => {
