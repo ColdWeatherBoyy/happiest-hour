@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import validateZipCode from "../../utils/validateZip";
 
-const SubmitForm = ({ setSubmittedZip }) => {
+const SubmitForm = ({ setSubmittedZip, handleOnClick }) => {
 	const [zipCode, setZipCode] = useState("");
 
 	const handleSubmit = (event) => {
