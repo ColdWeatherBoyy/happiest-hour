@@ -14,7 +14,7 @@ const Home = () => {
 	return (
 		<>
 			<Title />
-			<Clock />
+			<Clock setSubmitZip={setSubmitZip} />
 			<YelpList zipCode={submitZip} />
 		</>
 	);
