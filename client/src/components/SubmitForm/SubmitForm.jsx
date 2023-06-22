@@ -1,4 +1,4 @@
-import clockStyle from '../Clock/Clock.css';
+import "../Clock/Clock.css";
 import React, { useEffect, useState } from "react";
 import { Form, Button } from "react-bootstrap";
 
@@ -18,18 +18,15 @@ const SubmitForm = ({ onClick }) => {
 
 	return (
 		<>
-			<Form id='submit' className='d-flex flex-column align-items-center'>
+			<Form id="submit" className="d-flex flex-column align-items-center">
 				<Form.Group className="mb-2 col-5 col-sm-3 col-lg-2" controlId="zipCode">
-					{/* <Form.Label>Zip Code</Form.Label> */}
+					<Form.Label>Zip Code</Form.Label>
 					<Form.Control
 						type="text"
 						placeholder="Enter Zip Code"
 						value={zipCode}
 						onChange={(e) => setZipCode(e.target.value)}
 					/>
-					{/* <Form.Text className="text-muted">
-						Don't you want to know where to drink?
-					</Form.Text> */}
 				</Form.Group>
 				<Button variant="primary" onClick={handleOnClick}>
 					Let's Get Happy!
