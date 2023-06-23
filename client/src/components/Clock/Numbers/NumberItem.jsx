@@ -1,49 +1,34 @@
-import { useState } from "react";
-
-const NumberItem = () => {
-    let [x, setX] = useState(0);
-    let [y, setY] = useState(0);
-
-
-    // let i
-    // for(i=0 ; i<13 ; i++) {
-    //     setX(x+16);
-    //     setY(y+16);
-    // }
-    console.log('x-value is: '+ x + ' and y-value is: '+ y)
+const NumberItem = ({ num }) => {
 
     const calcTranslation = () => {
-
-        // for(x=0 ; x<13 ; x++) {
-        //     setX(x+16);
-        // }
-        // for(y=0 ; y<13 ; y++){
-        //     setY(y+16);
-        // }
-
-
-        // numbersArr.map((item) => {
-            
-        //     return(
-        //         <p style={{transform: `translate(${x}%, ${y}%)` }}></p>
-        //     )
-        // })
-
-        // if((numbersArr[i] < numbersArr[4]) && (numbersArr[i] > numbersArr[9])) {
-        //     setX(x + 16);
-        // } else if((numbersArr[i] > numbersArr[3]) && (numbersArr[i] < numbersArr[10])) {
-        //     setX()
-        // } else {
-        //     x = 0
-        // }
+        let x = 0;
+        let y = 0;
+        
+        return(
+            {
+                x,
+                y
+            }
+        )    
     }
 
+    let { x, y } = calcTranslation();
+
     return(
-        {
-            x,
-            y
-        }
+        <p style={{position: `absolute`, left: `${x}%`, top: `${y}%`, zIndex: `1`, transform: `translate(-50%, -50%)` }}>{num}</p>
+        // left & top control movement related to parent (circle)
+        // translate controls the movement of the center of the <p> in this case, 50% of its length in either direction
     )
 }
 
 export default NumberItem;
+
+
+
+// calcTranslations calculates x and y translations
+    // either convert them to strings or use '' in style={...}
+    // return x & y-values
+// NumberItem returns <p style={{transform: `translate(${x}%, ${y}%)` }}>{num}</p> with 'num' as a prop
+
+// render <NumberItem key={id} /> in Numbers
+// render the <Numbers className='numbers' /> in Clock
