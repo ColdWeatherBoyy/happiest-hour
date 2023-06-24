@@ -1,4 +1,3 @@
-import './Numbers.css'
 import NumberItem from './NumberItem'
 
 const Numbers = () => {
@@ -9,16 +8,21 @@ const Numbers = () => {
 
     return(
         <div>
-            {numbersArr.map((arrayNum, id) => {
+            {numbersArr.map((arrayNum, index) => {
 
                 if((3 < arrayNum) && (arrayNum < 7)) {
                     console.log(arrayNum);
-                    xvalue = 70;
-                    yvalue = 50;
+                    xvalue = 70 + (5*index);
+                    yvalue = 50 + (5*index);
                 }
 
                 return(
-                    <NumberItem x={xvalue} y={yvalue} num={arrayNum} key={id}/>
+                    <NumberItem 
+                        x={xvalue} 
+                        y={yvalue} 
+                        num={arrayNum} 
+                        key={index}
+                    />
                 )
             })}
         </div>
