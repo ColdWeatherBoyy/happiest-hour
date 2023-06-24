@@ -1,0 +1,29 @@
+.clock-face {
+    /* overflow: hidden; */
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 3px solid hotpink;
+}
+
+.marking {
+    width: 5px;
+    height: 100%;
+    background-color: blue;
+    position: absolute;
+    content: '';
+    left: 50%;
+    transform: translate(-50%,0);
+}
+
+.clock-face::before, 
+.clock-face::after,
+.marking {
+    transform: rotate(90deg)
+}
+
+/* .clock-face::after {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    transform: rotate(90deg)
+} */

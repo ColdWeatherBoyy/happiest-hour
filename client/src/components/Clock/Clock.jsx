@@ -6,8 +6,7 @@ const Clock = ({ setSubmittedZip }) => {
 
 	return (
 		<div className="clock">
-            {/* <Numbers className='numbers'/> */}
-            <Numbers className='numbers'/>
+            <Numbers />
 			<SubmitForm setSubmittedZip={(zipCode) => setSubmittedZip(zipCode)} />
         </div>
     )
