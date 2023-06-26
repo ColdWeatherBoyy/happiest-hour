@@ -19,6 +19,13 @@
     transform: translate(-50%, -50%); /* translate(horizontal, vertical) */
 }
 
+.numbers {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+}
+
 @media (min-width: 769px) {
     #clock {
         width: 325px;
