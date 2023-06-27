@@ -2,7 +2,7 @@
     --diameter: 80vw;
 }
 
-.clock {
+.clock-frame {
     border: 3px solid black;
     background-color: rgb(255, 255, 255);
     border-radius: 50%;

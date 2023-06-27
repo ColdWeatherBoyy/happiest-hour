@@ -1,29 +1,71 @@
-.clock-face {
-    /* overflow: hidden; */
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    border: 3px solid hotpink;
-}
-
-.marking {
-    width: 5px;
-    height: 100%;
-    background-color: blue;
-    position: absolute;
-    content: '';
+.outer-clock-face {
+    overflow: hidden;
+    position: relative;
+    top: 50%;
     left: 50%;
-    transform: translate(-50%,0);
+    transform: translate(-50%, -50%);
+    width: 97%;
+    height: 97%;
+    border-radius: 50%;
+    border: 5px solid rgb(255, 255, 255);
 }
 
-.clock-face::before, 
-.clock-face::after,
-.marking {
-    transform: rotate(90deg)
-}
+/* NEED EXPLANATION FOR ::after & ::before effect */
 
-/* .clock-face::after {
+.outer-clock-face::after {
     -webkit-transform: rotate(90deg);
     -moz-transform: rotate(90deg);
-    transform: rotate(90deg)
-} */
+    transform: rotate(90deg);
+}
+
+.outer-clock-face::after,
+.outer-clock-face::before,
+.outer-clock-face .marking {
+    width: 5px;
+    height: 100%;
+    background-color: red;
+    position: absolute;
+    content: '';
+    left: 49.5%;
+}
+
+/* NEED EXPLANATION FOR ::after & ::before effect */
+
+.outer-clock-face .marking {
+    border: 3px solid green;
+}
+
+.outer-clock-face .marking.marking-1 {
+    -webkit-transform: rotate(30deg);
+    -moz-transform: rotate(30deg);
+    transform: rotate(30deg);
+}
+
+.outer-clock-face .marking.marking-2 {
+    -webkit-transform: rotate(60deg);
+    -moz-transform: rotate(60deg);
+    transform: rotate(60deg);
+}
+
+.outer-clock-face .marking.marking-3 {
+    -webkit-transform: rotate(120deg);
+    -moz-transform: rotate(120deg);
+    transform: rotate(120deg);
+}
+
+.outer-clock-face .marking.marking-4 {
+    -webkit-transform: rotate(150deg);
+    -moz-transform: rotate(150deg);
+    transform: rotate(150deg);
+}
+
+.inner-clock-face {
+    position: relative;
+    width: 85%;
+    height: 85%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background-color: white;
+}
