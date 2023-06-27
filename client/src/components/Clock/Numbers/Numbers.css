@@ -32,7 +32,9 @@
 /* NEED EXPLANATION FOR ::after & ::before effect */
 
 .outer-clock-face .marking {
-    border: 3px solid green;
+    /* border: 3px solid green; */
+    background-color: green;
+    width: 3px;
 }
 
 .outer-clock-face .marking.marking-1 {
@@ -60,12 +62,14 @@
 }
 
 .inner-clock-face {
-    position: relative;
+    position: absolute;
+    /* position: relative; */
     width: 85%;
     height: 85%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 50%;
+    z-index: 1;
     background-color: white;
 }
