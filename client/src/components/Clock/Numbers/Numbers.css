@@ -10,7 +10,16 @@
     border: 5px solid rgb(255, 255, 255);
 }
 
-/* NEED EXPLANATION FOR ::after & ::before effect */
+.outer-clock-face::after,
+.outer-clock-face::before,
+.outer-clock-face .marking {
+    width: 5px;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    content: '';
+    left: 49.5%;
+}
 
 .outer-clock-face::after {
     -webkit-transform: rotate(90deg);
@@ -18,22 +27,8 @@
     transform: rotate(90deg);
 }
 
-.outer-clock-face::after,
-.outer-clock-face::before,
 .outer-clock-face .marking {
-    width: 5px;
-    height: 100%;
-    background-color: red;
-    position: absolute;
-    content: '';
-    left: 49.5%;
-}
-
-/* NEED EXPLANATION FOR ::after & ::before effect */
-
-.outer-clock-face .marking {
-    /* border: 3px solid green; */
-    background-color: green;
+    background-color: rgb(89, 89, 89);
     width: 3px;
 }
 
@@ -63,7 +58,6 @@
 
 .inner-clock-face {
     position: absolute;
-    /* position: relative; */
     width: 85%;
     height: 85%;
     top: 50%;
@@ -73,3 +67,7 @@
     z-index: 1;
     background-color: white;
 }
+
+
+/* link: 
+https://www.tutorialswebsite.com/create-an-analog-clock-using-html-css-and-javascript/*/
