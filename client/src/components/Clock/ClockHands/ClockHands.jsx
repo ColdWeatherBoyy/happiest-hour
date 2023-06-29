@@ -1,29 +1,14 @@
 import './ClockHands.css';
 import { useState, useEffect } from 'react';
 
-let now = new Date();
-// const [hour, setHour] = useState(now.getHours());
-// const [minute, setMinute] = useState(now.getMinutes());
-// const [second, setSecond] = useState(now.getSeconds());
 
 function ClockHands() {
-    let hour = now.getHours();
-    if(hour > 12) {
-        hour - 12
-    } else if(hour === 0) {
-        hour = 12
-    } else {
-        console.log("all clear")
-    }
-    let minute = now.getMinutes();
-    let second = now.getSeconds();
-    console.log(hour);
 
-    const getTime = () => {
-        let nowHour = document.getElementById('hour-hand');
-        let hourDegree = 360 / nowHour
-    }
-    getTime();
+    let now = new Date();
+    let hourDegree = ((now.getHours() % 12) / 12) * 360 + (now.getMinutes() / 60) * 30;;
+    let minuteDegree = (now.getMinutes() / 60) * 360;;
+    let secondDegree = (now.getSeconds() / 60) * 360;
+    
 
     return(
         <div className='clock-hands'>
@@ -31,9 +16,9 @@ function ClockHands() {
                 <div id="outer-center-point"></div>
                 <div id="inner-center-point"></div>
             </div>
-            <div id="minute-hand"></div>
-            <div id="hour-hand" style={{transform: `rotate(30deg)`}}></div>
-            <div id="second-hand"></div>
+            <div id="minute-hand" style={{transform: `rotate(${minuteDegree}deg)`}}></div>
+            <div id="hour-hand" style={{transform: `rotate(${hourDegree}deg)`}}></div>
+            <div id="second-hand" style={{transform: `rotate(${secondDegree}deg)`}}></div>
         </div>
     )
 }
