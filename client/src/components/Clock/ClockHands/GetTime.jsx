@@ -9,8 +9,15 @@ function GetTime() {
     console.log(hour, minute, second);
 
     return(
-        <div>
-            <h1>placeholder</h1>
+        <div className='clock-hands'>
+            <div>
+                <div id="outer-center-point"></div>
+                <div id="inner-center-point"></div>
+            </div>
+            <div className="hour-hand"></div>
+            <div className="minute-hand"></div>
+            <div className="second-hand"></div>
+            {/* <h1 id='test'>test</h1> */}
         </div>
     )
 }
