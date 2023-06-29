@@ -1,4 +1,3 @@
-import arrow from '../../../assets/right-arrow.png';
 import './ClockHands.css';
 
 let now = new Date();
@@ -11,7 +10,7 @@ function GetTime() {
 
     return(
         <div>
-            <img src={arrow} alt="hour hand" id='hour-hand'/>
+            <h1>placeholder</h1>
         </div>
     )
 }
