@@ -1,75 +1,72 @@
-.clock-hands {
-    position: relative;
-    z-index: 0;
-    bottom: 97%;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    /* border: 5px solid rgb(179, 51, 51); */
-}
+/* .clock-hands {
+	position: relative;
+	z-index: 0;
+	bottom: 97%;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	border: 5px solid rgb(179, 51, 51);
+} */
 
-#center-point {
-    /* visibility: hidden; */
-    position: relative;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    /* border: 3px solid green; */
+/* #center-point {
+	visibility: hidden;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	border: 3px solid green;
+} */
+
+#outer-center-point {
+	z-index: 1;
+	width: 7%;
+	height: 7%;
+	border-radius: 50%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: rgb(170, 170, 170);
 }
 
 #inner-center-point {
-    z-index: 1;
-    width: 4%;
-    height: 4%;
-    border-radius: 50%;
-    position: absolute;
-    left: 48%;
-    top: 48%;
-    background-color: rgb(89, 89, 89);
-}
-
-#outer-center-point {
-    z-index: 1;
-    width: 7%;
-    height: 7%;
-    border-radius: 50%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgb(170, 170, 170);
+	z-index: 1;
+	width: 4%;
+	height: 4%;
+	border-radius: 50%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: rgb(89, 89, 89);
 }
 
 #hour-hand {
-    position: absolute;
-    background-color: rgb(255, 0, 0);
-    width: 2%;
-    height: 25%;
-    left: 50%;
-    bottom: 50%;
-    transform-origin: bottom left;
-    transform: translate(-48%, 0%);
-    /* transform: rotate(235deg); */
+	position: absolute;
+	background-color: rgb(255, 0, 0);
+	width: 2%;
+	height: 25%;
+	left: 49%;
+	bottom: 50%;
+	transform-origin: bottom center;
 }
 
 #minute-hand {
-    position: absolute;
-    background-color: rgb(13, 0, 255);
-    width: 2%;
-    height: 32%;
-    left: 50%;
-    bottom: 50%;
-    transform-origin: bottom left;
-    transform: translate(-48%, 0%);
+	position: absolute;
+	background-color: rgb(13, 0, 255);
+	width: 1%;
+	height: 32%;
+	left: 49.5%;
+	bottom: 50%;
+	transform-origin: bottom center;
 }
 
 #second-hand {
-    position: absolute;
-    background-color: rgb(255, 115, 0);
-    width: 0.75%;
-    height: 35%;
-    left: 50%;
-    bottom: 50%;
-    transform-origin: bottom left;
-    transform: translate(-48%, 0%);
+	position: absolute;
+	background-color: rgb(255, 115, 0);
+	width: 0.5%;
+	height: 35%;
+	left: 49.75%;
+	bottom: 50%;
+	transform-origin: bottom center;
 }
