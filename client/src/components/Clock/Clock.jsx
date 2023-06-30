@@ -6,7 +6,7 @@ import SubmitForm from "../SubmitForm/SubmitForm";
 const Clock = ({ setSubmittedZip }) => {
 	return (
 		<div className="clock-frame">
-			{/* <Numbers /> */}
+			<Numbers />
 			<ClockHands />
 			<SubmitForm setSubmittedZip={(zipCode) => setSubmittedZip(zipCode)} />
 		</div>
