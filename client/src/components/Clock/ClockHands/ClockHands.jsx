@@ -23,6 +23,7 @@ function ClockHands() {
 			<div id="hour-hand" style={{ transform: `rotate(${hourDegree}deg)` }}></div>
 			<div id="minute-hand" style={{ transform: `rotate(${minuteDegree}deg)` }}></div>
 			<div id="second-hand" style={{ transform: `rotate(${secondDegree}deg)` }}></div>
+            <div className="inner-clock-face"></div>
 		</div>
 	);
 }

@@ -11,8 +11,8 @@
 	z-index: 0;
 }
 
-/* .inner-clock-face {
-    visibility: hidden;
+.inner-clock-face-big {
+    /* visibility: hidden; */
     position: absolute;
     width: 85%;
     height: 85%;
@@ -20,96 +20,20 @@
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 50%;
+    z-index: 0;
+    background-color: rgb(255, 255, 255);
+}
+
+.inner-clock-face-small {
+    /* visibility: hidden; */
+    position: absolute;
+    width: 79%;
+    height: 79%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
     z-index: 1;
     background-color: rgb(255, 255, 255);
-} */
-
-/* .outer-clock-face .marking {
-    position: absolute;
-    left: 49.5%;
-    transform-origin: bottom left;
-
-
-
-    background-color: rgb(0, 0, 0);
-    width: 5px;
-    height: 50%;
-    transform: rotate(30deg);
-} */
-
-/* .outer-clock-face .marking-1 {
-    background-color: rgb(0, 0, 0);
-    width: 5px;
-    height: 50%;
-    position: absolute;
-    left: 49.5%;
 }
 
-.outer-clock-face .marking.marking-2 {
-    background-color: rgb(89, 89, 89);
-    width: 5px;
-    height: 50%;
-    position: absolute;
-    left: 49.5%;
-    transform-origin: bottom left;
-    transform: rotate(30deg);
-}
-
-.outer-clock-face .marking.marking-3 {
-    background-color: rgb(89, 89, 89);
-    width: 5px;
-    height: 50%;
-    position: absolute;
-    left: 49.5%;
-    transform-origin: bottom left;
-    transform: rotate(60deg);
-} */
-
-/* .outer-clock-face::after,
-.outer-clock-face::before,
-.outer-clock-face .marking {
-    width: 5px;
-    height: 100%;
-    background-color: rgb(0, 0, 0);
-    position: absolute;
-    content: '';
-    left: 49.5%;
-}
-
-.outer-clock-face::after {
-    -webkit-transform: rotate(90deg);
-    -moz-transform: rotate(90deg);
-    transform: rotate(90deg);
-}
-
-.outer-clock-face .marking {
-    background-color: rgb(89, 89, 89);
-    width: 3px;
-}
-
-.outer-clock-face .marking.marking-1 {
-    -webkit-transform: rotate(30deg);
-    -moz-transform: rotate(30deg);
-    transform: rotate(30deg);
-}
-
-.outer-clock-face .marking.marking-2 {
-    -webkit-transform: rotate(60deg);
-    -moz-transform: rotate(60deg);
-    transform: rotate(60deg);
-}
-
-.outer-clock-face .marking.marking-3 {
-    -webkit-transform: rotate(120deg);
-    -moz-transform: rotate(120deg);
-    transform: rotate(120deg);
-}
-
-.outer-clock-face .marking.marking-4 {
-    -webkit-transform: rotate(150deg);
-    -moz-transform: rotate(150deg);
-    transform: rotate(150deg);
-} */
-
-/* link: 
-https://www.tutorialswebsite.com/create-an-analog-clock-using-html-css-and-javascript/*/
