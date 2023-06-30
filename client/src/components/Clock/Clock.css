@@ -13,20 +13,6 @@
 	z-index: 0;
 }
 
-.vertical-line {
-	position: absolute;
-	left: 50%;
-	height: 100%;
-	border: 0.1px solid red;
-}
-
-.horizontal-line {
-	position: absolute;
-	bottom: 50%;
-	width: 100%;
-	border: 0.1px solid red;
-}
-
 #submit {
 	visibility: hidden;
 	position: absolute;
