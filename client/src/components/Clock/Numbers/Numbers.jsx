@@ -7,12 +7,29 @@ const Numbers = () => {
     const [color, setColor] = useState("000000");
     const [height, setHeight] = useState(0);
     const [width, setWidth] = useState(0);
+    let num = Array.from({ length: 12 }).map((_, index) => {
+        index = index + 1
+        return(
+            index
+        )
+    })
+    console.log(num)
     
     const placeMarkings = () => {
-        let rotation = 30;
-        let color = "000FF";
-        let height = 50;
-        let width = 5;
+        let rotation = (num/12) * 360;
+        let color;
+        let height;
+        let width;
+
+        if(num%3 === 0) {
+            color = "000000";
+            height = 12;
+            width = 5;
+        } else {
+            color = "808080";
+            height = 10;
+            width = 3;
+        }
         
         setRotation(rotation);
         setColor(color);

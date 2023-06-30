@@ -11,6 +11,19 @@
     z-index: 0;
 }
 
+/* .inner-clock-face {
+    visibility: hidden;
+    position: absolute;
+    width: 85%;
+    height: 85%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 1;
+    background-color: rgb(255, 255, 255);
+} */
+
 /* .outer-clock-face .marking {
     position: absolute;
     left: 49.5%;
@@ -51,19 +64,6 @@
     transform-origin: bottom left;
     transform: rotate(60deg);
 } */
-
-.inner-clock-face {
-    visibility: hidden;
-    position: absolute;
-    width: 85%;
-    height: 85%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    z-index: 1;
-    background-color: rgb(255, 255, 255);
-}
 
 /* .outer-clock-face::after,
 .outer-clock-face::before,
