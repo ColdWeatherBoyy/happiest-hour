@@ -62,7 +62,7 @@
     transform: translate(-50%, -50%);
     border-radius: 50%;
     z-index: 1;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
 }
 
 /* .outer-clock-face::after,
