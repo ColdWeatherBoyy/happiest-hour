@@ -11,7 +11,61 @@
     z-index: 0;
 }
 
-.outer-clock-face::after,
+/* .outer-clock-face .marking {
+    position: absolute;
+    left: 49.5%;
+    transform-origin: bottom left;
+
+
+
+    background-color: rgb(0, 0, 0);
+    width: 5px;
+    height: 50%;
+    transform: rotate(30deg);
+} */
+
+/* .outer-clock-face .marking-1 {
+    background-color: rgb(0, 0, 0);
+    width: 5px;
+    height: 50%;
+    position: absolute;
+    left: 49.5%;
+}
+
+.outer-clock-face .marking.marking-2 {
+    background-color: rgb(89, 89, 89);
+    width: 5px;
+    height: 50%;
+    position: absolute;
+    left: 49.5%;
+    transform-origin: bottom left;
+    transform: rotate(30deg);
+}
+
+.outer-clock-face .marking.marking-3 {
+    background-color: rgb(89, 89, 89);
+    width: 5px;
+    height: 50%;
+    position: absolute;
+    left: 49.5%;
+    transform-origin: bottom left;
+    transform: rotate(60deg);
+} */
+
+.inner-clock-face {
+    visibility: hidden;
+    position: absolute;
+    width: 85%;
+    height: 85%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 1;
+    background-color: rgb(255, 255, 255);
+}
+
+/* .outer-clock-face::after,
 .outer-clock-face::before,
 .outer-clock-face .marking {
     width: 5px;
@@ -55,19 +109,8 @@
     -webkit-transform: rotate(150deg);
     -moz-transform: rotate(150deg);
     transform: rotate(150deg);
-}
+} */
 
-.inner-clock-face {
-    position: absolute;
-    width: 85%;
-    height: 85%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    z-index: 1;
-    background-color: white;
-}
 
 
 /* link: 

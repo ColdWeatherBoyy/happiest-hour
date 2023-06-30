@@ -43,7 +43,7 @@
 #hour-hand {
     position: absolute;
     background-color: rgb(255, 0, 0);
-    width: 1%;
+    width: 2%;
     height: 25%;
     left: 50%;
     bottom: 50%;
@@ -55,7 +55,7 @@
 #minute-hand {
     position: absolute;
     background-color: rgb(13, 0, 255);
-    width: 1%;
+    width: 2%;
     height: 32%;
     left: 50%;
     bottom: 50%;
@@ -66,7 +66,7 @@
 #second-hand {
     position: absolute;
     background-color: rgb(255, 115, 0);
-    width: 0.5%;
+    width: 0.75%;
     height: 35%;
     left: 50%;
     bottom: 50%;
