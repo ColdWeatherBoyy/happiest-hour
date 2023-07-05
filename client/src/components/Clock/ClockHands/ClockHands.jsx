@@ -17,45 +17,14 @@ function ClockHands() {
   let minuteDegree = (now.getMinutes() / 60) * 360;
   let secondDegree = (now.getSeconds() / 60) * 360;
 
-  const centerRef = useRef(null);
-  const previousDimensionsRef = useRef({ width: 0, height: 0 });
 
   useEffect(() => {
-    const center = centerRef.current;
+    const center = document.getElementById("inner-center-point");
+    const dimensions = center.getBoundingClientRect();
 
-    if(center) {
-		const { width, height } = center.getBoundingClientRect();
-		const previousDimensions = previousDimensionsRef.current;
-		
-		if( (width !== previousDimensions.width) || (height !== previousDimensions.height) ){
-			console.log('dimensions changed')
-		} else {
-			console.log('center is the same');
-		}
+    console.log(dimensions);
 
-		previousDimensionsRef.current = ({ width, height });
-	}
-
-	// get the current width, height dimensions
-	// if the width, height of previousDimRef.curr are !== to width, height @ current 
-		// then find new
-		// else, keep current width, height
-	
-
-
-
-
-
-    // if (center) {
-    //   const rect = center.getBoundingClientRect();
-    //   console.log(
-    //     "Top: " + rect.top,
-    //     "Right: " + rect.right,
-    //     "Bottom: " + rect.bottom,
-    //     "Left: " + rect.left
-    //   );
-    // }
-  });
+  }, []);
 
   return (
     <div>
@@ -73,12 +42,10 @@ function ClockHands() {
         id="second-hand"
         style={{ transform: `rotate(${secondDegree}deg)` }}
       ></div>
-      <div ref={centerRef} className="inner-clock-face"></div>
+      <div className="inner-clock-face"></div>
     </div>
   );
 }
 
 export default ClockHands;
 
-// want to find center point of clock --> find (x, y) of inner circle
-// use (x, y) as (h, k) in circle equation
