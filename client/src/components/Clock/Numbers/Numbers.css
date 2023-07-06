@@ -11,6 +11,18 @@
 	z-index: 0;
 }
 
+/* #radius {
+    position: absolute;
+    width: 92%;
+    height: 92%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: -1;
+	border: 5px solid rgb(186, 33, 150);
+} */
+
 .inner-clock-face-big {
     /* visibility: hidden; */
     position: absolute;

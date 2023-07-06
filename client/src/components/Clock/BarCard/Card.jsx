@@ -1,25 +1,23 @@
-function Card({ name, rating, reviews }) {
-  return (
+import placeholderData from "../../../assets/PlaceholderData";
+
+function Card({ name, rating, xval, yval }) {
+  
     <div
       style={{
-        visibility: `hidden`,
-        border: `1px solid green`,
-        width: `25%`,
-        textAlign: `center`,
         position: `absolute`,
+        zIndex: `2`,
         bottom: `50%`,
         left: `50%`,
-        transformOrigin: `center`,
-        transform: `translate(-50%, 50%)`,
-        // transform: `translate(-50%, 50%) rotate(${( (item.key + 1)/12 ) * 360}deg)`,
-        zIndex: `2`,
+        border: `1px solid green`,
+        width: `20%`,
+        textAlign: `center`,
+        transform: `translateX(${xval}px) translateY(${yval}px)`,
       }}
     >
       <p>{name}</p>
       <p>{rating}/5 stars</p>
-      <p>{reviews} reviews</p>
-    </div>
-  );
+      {/* <p>{reviews} reviews</p> */}
+    </div>;
 }
 
 export default Card;

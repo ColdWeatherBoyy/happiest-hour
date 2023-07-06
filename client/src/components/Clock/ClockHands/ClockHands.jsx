@@ -1,5 +1,5 @@
 import "./ClockHands.css";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 
 function ClockHands() {
   const [now, setNow] = useState(new Date());
@@ -17,14 +17,6 @@ function ClockHands() {
   let minuteDegree = (now.getMinutes() / 60) * 360;
   let secondDegree = (now.getSeconds() / 60) * 360;
 
-
-  useEffect(() => {
-    const center = document.getElementById("inner-center-point");
-    const dimensions = center.getBoundingClientRect();
-
-    console.log(dimensions);
-
-  }, []);
 
   return (
     <div>
@@ -48,4 +40,3 @@ function ClockHands() {
 }
 
 export default ClockHands;
-
