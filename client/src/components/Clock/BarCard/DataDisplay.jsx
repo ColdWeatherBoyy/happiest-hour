@@ -22,23 +22,15 @@ const Placeholder = () => {
 				thetas.unshift(thetas.pop());
 			}
 
-			// Get the dimensions of the center div using useRef
+			// Get the dimensions of the radius by halfing the container size using the container useRef
 			const container = coordinatesRef.current;
-			const containerWidth = container.offsetWidth;
-			const containerHeight = container.offsetHeight;
-
-			// Get the radius of the circle
-			const r = containerWidth / 2;
-
-			// Get the center of the circle
-			const h = containerWidth / 2;
-			const k = containerHeight / 2;
+			const radius = container.offsetWidth / 2;
 
 			// Calculate the coordinates of the 12 points on the circle
 			const newCoordinates = thetas.map((theta) => {
 				return {
-					x: h + r * Math.cos(theta),
-					y: k + r * Math.sin(theta),
+					x: radius + radius * Math.cos(theta),
+					y: radius + radius * Math.sin(theta),
 				};
 			});
 
