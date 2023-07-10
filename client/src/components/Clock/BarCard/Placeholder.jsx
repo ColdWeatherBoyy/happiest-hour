@@ -2,64 +2,87 @@ import placeholderData from "../../../assets/PlaceholderData";
 import "./Placeholder.css";
 import Card from "./Card";
 import { useEffect, useState } from "react";
+import { set } from "mongoose";
 
 const Placeholder = () => {
-  let h, k, r;
-  const [coordinates, setCoordinates] = useState();
+	let h, k, r;
+	const [coordinates, setCoordinates] = useState();
+	const [coordinatesAndData, setCoordinatesAndData] = useState();
+	const [loading, setLoading] = useState(true);
 
-  const thetas = Array.from({ length: 12 }).map((_, index) => {
-    let degree = (index / 12) * 360;
-    return (degree * Math.PI) / 180;
-    // console.log(theta);
-  });
+	// this useEffect sets the coordinates of the 12 points on the circle in our state to be available once we get bar data
+	useEffect(() => {
+		// define thetas as an array of 12 angles in radians
+		let thetas = Array.from({ length: 12 }).map((_, index) => {
+			let degree = (index / 12) * 360;
+			return (degree * Math.PI) / 180;
+		});
 
-  // console.log("thetas", thetas);
+		for (let i = 0; i < 3; i++) {
+			thetas.unshift(thetas.pop());
+		}
 
-  // const placeCards = () => {
+		// get the dimensions of the center div
+		const center = document.getElementById("dimensions");
+		const dimensions = center.getBoundingClientRect();
 
-  useEffect(() => {
-    const center = document.getElementById("dimensions");
-    const dimensions = center.getBoundingClientRect();
+		// get the radius of the circle
+		const circleDim = document.getElementById("dimensions").getBoundingClientRect();
+		r = circleDim.width / 2;
 
-    const circleDim = document
-      .getElementById("dimensions")
-      .getBoundingClientRect();
-    r = circleDim.width / 2;
-    // console.log(r);
+		// get the center of the circle
+		const { x, y, width, height } = dimensions;
+		h = x + 0.5 * width;
+		k = y + 0.5 * height;
 
-    const { x, y, width, height } = dimensions;
-    h = x + 0.5 * width;
-    k = y + 0.5 * height;
+		// set the coordinates of the 12 points on the circle in our state
+		setCoordinates(
+			thetas.map((theta) => {
+				return {
+					x: h + r * Math.cos(theta),
+					y: k + r * Math.sin(theta),
+				};
+			})
+		);
+	}, []);
 
-    // let xval = h + r * Math.cos(theta);
-    // let yval = k + r * Math.sin(theta);
-    // console.log("yval", yval);
+	// this useEffect combines our coordinate data for circle placement with our bar data from the yelp API (currently hardcoded test data)
+	// Remember to change the trigger to the useEffect to be on the successful return of the API call
+	useEffect(() => {
+		if (!coordinates) return;
 
-    setCoordinates(
-      thetas.map((theta) => {
-        return {
-          x: h + r * Math.cos(theta),
-          y: k + r * Math.sin(theta),
-        };
-      })
-    );
+		// Establishes an empty array to combine our coordinate and bar data
+		const tempCoordinatesAndData = [];
+		// run through each object in both of our arrays to combine them in objects in our temporary Array
+		for (let i = 0; i < coordinates.length; i++) {
+			tempCoordinatesAndData.push({
+				key: i,
+				name: placeholderData[i].name,
+				rating: placeholderData[i].rating,
+				x: coordinates[i].x,
+				y: coordinates[i].y,
+			});
+		}
 
-    console.log("x", x);
-  }, []);
-  //   return {
-  //     // xval,
-  //     // yval,
-  //   };
-  // };
-  // placeCards();
+		setCoordinatesAndData(tempCoordinatesAndData);
+	}, [coordinates]);
 
-  return (
-    <div id="dimensions" className="container">
-      {placeholderData.map((item) => {
-        return <Card key={item.key} name={item.name} rating={item.rating} xval='54' yval='76'/>;
-      })}
-    </div>
-  );
+	useEffect(() => {
+		if (!coordinatesAndData) return;
+		setLoading(false);
+	}, [coordinatesAndData]);
+
+	return (
+		<div id="dimensions" className="container">
+			{loading ? (
+				<></>
+			) : (
+				coordinatesAndData.map(({ key, name, rating, x, y }) => {
+					return <Card key={key} name={name} rating={rating} xval={x} yval={y} />;
+				})
+			)}
+		</div>
+	);
 };
 
 export default Placeholder;
