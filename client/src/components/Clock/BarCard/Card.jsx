@@ -1,23 +1,25 @@
 function Card({ name, rating, xval, yval }) {
-	const translateX = `calc(${xval}px - 63%)`;
-	const translateY = `calc(${yval}px - 50%)`;
-	return (
-		<div
-			style={{
-				position: `absolute`,
-				zIndex: `2`,
-				border: `1px solid green`,
-				width: `20%`,
-				textAlign: `center`,
-				// right: `100%`,
-				transform: `translateX(${translateX}) translateY(${translateY})`,
-			}}
-		>
-			<p>{name}</p>
-			<p>{rating}/5 stars</p>
-			{/* <p>{reviews} reviews</p> */}
-		</div>
-	);
+
+  return (
+    <div
+      style={{
+        position: `absolute`,
+        zIndex: `2`,
+        border: `1px solid green`,
+        width: `20%`,
+        height: `auto`,
+        textAlign: `center`,
+        transform: `translateX(${xval}px) translateY(${yval}px)`,
+      }}
+    >
+      <p>{name}</p>
+      <p>{rating}/5 stars</p>
+    </div>
+  );
 }
 
 export default Card;
+
+// if width = 20%, then that's 20% of the container
+// we have access to the container dimensions in DataDisplay
+// subtracting 10% of the container width from xval & yval might move the cards to where they need to be
