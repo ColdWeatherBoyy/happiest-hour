@@ -4,9 +4,9 @@ import Card from "./Card";
 import { useEffect, useState, useRef } from "react";
 
 const Placeholder = () => {
-  const coordinatesRef = useRef();
+  const coordinatesRef = useRef(0);
   const [coordinates, setCoordinates] = useState();
-  const [coordinatesAndData, setCoordinatesAndData] = useState();
+  const [coordinatesAndData, setCoordinatesAndData] = useState([]);
   const [loading, setLoading] = useState(true);
 
   // this useEffect sets the coordinates of the 12 points on the circle in our state to be available once we get bar data
@@ -76,7 +76,6 @@ const Placeholder = () => {
         coordinatesAndData.map(({ key, name, rating, x, y }) => {
           return (
             <Card key={key} name={name} rating={rating} xval={x} yval={y} />
-            // <Card key={key} name={name} rating={rating} xval="180" yval={y} />
           );
         })
       )}
