@@ -2,12 +2,12 @@ import "./Title.css";
 
 const Title = () => {
 	return (
-		<div id="pageTop">
+		<div className="pageTop title">
 			<h1 id="title">Happiest Hour</h1>
-			<p>
+			<h5 id="directions">
 				Don't you want to know where to drink? <br />
 				Enter your zip code below.
-			</p>
+			</h5>
 		</div>
 	);
 };
