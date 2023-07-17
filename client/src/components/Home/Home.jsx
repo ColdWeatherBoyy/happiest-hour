@@ -8,7 +8,7 @@ const Home = () => {
 	const [submittedZip, setSubmittedZip] = useState("");
 
 	useEffect(() => {
-		console.log(submittedZip);
+		// console.log(submittedZip);
 	}, [submittedZip]);
 
 	return (
