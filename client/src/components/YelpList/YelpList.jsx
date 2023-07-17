@@ -4,7 +4,7 @@ import getHappyHours from "../../utils/yelpRequest";
 function YelpList({ submittedZip }) {
 	const [happyHours, setHappyHours] = useState([]);
 	const [count, setCount] = useState(0);
-	console.log(happyHours)
+	console.log(happyHours);
 
 	useEffect(() => {
 		if (!submittedZip) {

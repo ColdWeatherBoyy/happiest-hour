@@ -1,6 +1,5 @@
 const getHappyHours = async (zipCode) => {
 	try {
-		console.log(zipCode)
 		const response = await fetch(`/api/yelp/${zipCode}`, {
 			method: "GET",
 			headers: {
@@ -9,7 +8,6 @@ const getHappyHours = async (zipCode) => {
 		});
 
 		const data = await response.json();
-
 		return data.businesses;
 	} catch (err) {
 		console.error(err.message);

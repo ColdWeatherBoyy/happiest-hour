@@ -1,29 +1,35 @@
 import "./Clock.css";
 import Numbers from "./Numbers/Numbers";
-import DataDisplay from "./BarCard/DataDisplay";
+import BarCardList from "../BarCard/BarCardList";
 import ClockHands from "./ClockHands/ClockHands";
 import SubmitForm from "../SubmitForm/SubmitForm";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-const Clock = ({ setSubmittedZip }) => {
+const Clock = () => {
+	const [submittedZip, setSubmittedZip] = useState("");
 	const [submitted, setSubmitted] = useState(false);
+
+	const updateSubmission = (zipCode) => {
+		setSubmittedZip(zipCode);
+		setSubmitted(!submitted);
+	};
+
+	useEffect(() => {
+		console.log(submittedZip);
+	}, [submittedZip]);
 
 	return (
 		<div className="clock-frame">
 			<Numbers />
 			{submitted ? (
 				<>
-					<DataDisplay />
+					<BarCardList zipCode={submittedZip} />
 					<ClockHands />
 				</>
 			) : (
 				<>
 					<ClockHands />
-					<SubmitForm
-						setSubmittedZip={(zipCode) => {
-							setSubmittedZip(zipCode), setSubmitted(!submitted);
-						}}
-					/>
+					<SubmitForm handleZipSubmit={updateSubmission} />
 				</>
 			)}
 		</div>
