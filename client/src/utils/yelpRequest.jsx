@@ -8,9 +8,14 @@ const getHappyHours = async (zipCode) => {
 		});
 
 		const data = await response.json();
+
+		if (!data || !data.businesses || data.businesses.length === 0) {
+			throw new Error("No happy hours found for the given Zip Code.");
+		}
+
 		return data.businesses;
 	} catch (err) {
-		console.error(err.message);
+		throw err;
 	}
 };
 

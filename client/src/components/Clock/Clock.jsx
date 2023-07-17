@@ -8,28 +8,26 @@ import { useState, useEffect } from "react";
 const Clock = () => {
 	const [submittedZip, setSubmittedZip] = useState("");
 	const [submitted, setSubmitted] = useState(false);
+	const [happyHours, setHappyHours] = useState([]);
 
-	const updateSubmission = (zipCode) => {
+	const updateSubmission = (zipCode, result) => {
 		setSubmittedZip(zipCode);
 		setSubmitted(!submitted);
+		setHappyHours(result);
 	};
-
-	useEffect(() => {
-		console.log(submittedZip);
-	}, [submittedZip]);
 
 	return (
 		<div className="clock-frame">
 			<Numbers />
 			{submitted ? (
 				<>
-					<BarCardList zipCode={submittedZip} />
+					<BarCardList happyHours={happyHours} />
 					<ClockHands />
 				</>
 			) : (
 				<>
 					<ClockHands />
-					<SubmitForm handleZipSubmit={updateSubmission} />
+					<SubmitForm setHappyHours={setHappyHours} handleZipSubmit={updateSubmission} />
 				</>
 			)}
 		</div>
