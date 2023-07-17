@@ -1,22 +1,3 @@
-/* .clock-hands {
-	position: relative;
-	z-index: 0;
-	bottom: 97%;
-	width: 100%;
-	height: 100%;
-	border-radius: 50%;
-	border: 5px solid rgb(179, 51, 51);
-} */
-
-/* #center-point {
-	visibility: hidden;
-	position: relative;
-	width: 100%;
-	height: 100%;
-	z-index: 1;
-	border: 3px solid green;
-} */
-
 #outer-center-point {
 	z-index: 1;
 	width: 7%;
@@ -43,30 +24,48 @@
 
 #hour-hand {
 	position: absolute;
-	background-color: rgb(255, 0, 0);
+	background-color: rgb(0, 0, 0);
 	width: 2%;
-	height: 25%;
+	height: 27%;
 	left: 49%;
 	bottom: 50%;
+	border-top-left-radius: 50%;
+	border-top-right-radius: 50%;
 	transform-origin: bottom center;
 }
 
 #minute-hand {
 	position: absolute;
-	background-color: rgb(13, 0, 255);
-	width: 1%;
+	background-color: rgb(0, 0, 0);
+	width: 1.5%;
 	height: 32%;
 	left: 49.5%;
 	bottom: 50%;
+	border-top-left-radius: 50%;
+	border-top-right-radius: 50%;
 	transform-origin: bottom center;
 }
 
 #second-hand {
 	position: absolute;
-	background-color: rgb(255, 115, 0);
-	width: 0.5%;
-	height: 35%;
+	background-color: rgb(211, 0, 0);
+	width: 0.75%;
+	height: 38%;
 	left: 49.75%;
 	bottom: 50%;
 	transform-origin: bottom center;
+	/* transform-origin: 0.375% 0%;  */
+}
+
+#second-hand-bottom {
+	position: absolute;
+	/* visibility: hidden; */
+	background-color: rgb(211, 0, 0);
+	width: 2.1%;
+	height: 10%;
+	left: 49.625%;
+	top: 49.625%;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	transform-origin: top center;
 }
