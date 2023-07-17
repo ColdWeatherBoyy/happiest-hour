@@ -26,8 +26,8 @@ const Clock = () => {
 				</>
 			) : (
 				<>
-					<ClockHands />
 					<SubmitForm setHappyHours={setHappyHours} handleZipSubmit={updateSubmission} />
+					<ClockHands />
 				</>
 			)}
 		</div>
