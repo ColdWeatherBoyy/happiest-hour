@@ -7,7 +7,7 @@ function Card({ name, rating, xval, yval }) {
         zIndex: `2`,
         border: `1px solid green`,
         width: `20%`,
-        height: `auto%`,
+        height: `20%`,
         textAlign: `center`,
         transform: `translateX(${xval}px) translateY(${yval}px)`,
       }}

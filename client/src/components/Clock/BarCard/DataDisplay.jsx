@@ -9,7 +9,8 @@ const Placeholder = () => {
   const [coordinates, setCoordinates] = useState();
   const [coordinatesAndData, setCoordinatesAndData] = useState([]);
   const [loading, setLoading] = useState(true);
-  const { width } = getWindowDimensions();
+  const { width, height } = getWindowDimensions();
+  
 
   // Define thetas as an array of 12 angles in radians
   let thetas = Array.from({ length: 12 }).map((_, index) => {
@@ -20,6 +21,7 @@ const Placeholder = () => {
   for (let i = 0; i < 3; i++) {
     thetas.unshift(thetas.pop());
   }
+
 
   // this useEffect sets the coordinates of the 12 points on the circle in our state to be available once we get bar data
   useEffect(() => {
@@ -44,10 +46,11 @@ const Placeholder = () => {
       setCoordinates(newCoordinates);
     };
 
+
     updateCoordinates();
 
     // waits for the width of the window to change using the useWindowDimensions hook in utils folder
-  }, [width]);
+  }, [width, height]);
 
   // this useEffect combines our coordinate data for circle placement with our bar data from the yelp API (currently hardcoded test data)
   // Remember to change the trigger to the useEffect to be on the successful return of the API call
