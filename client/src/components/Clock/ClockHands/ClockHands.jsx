@@ -17,7 +17,6 @@ function ClockHands() {
   let minuteDegree = (now.getMinutes() / 60) * 360;
   let secondDegree = (now.getSeconds() / 60) * 360;
 
-
   return (
     <div>
       <div id="outer-center-point"></div>
@@ -32,6 +31,10 @@ function ClockHands() {
       ></div>
       <div
         id="second-hand"
+        style={{ transform: `rotate(${secondDegree}deg)` }}
+      ></div>
+      <div
+        id="second-hand-bottom"
         style={{ transform: `rotate(${secondDegree}deg)` }}
       ></div>
       <div className="inner-clock-face"></div>
