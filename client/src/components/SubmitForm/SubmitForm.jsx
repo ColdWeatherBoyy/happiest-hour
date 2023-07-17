@@ -3,7 +3,7 @@ import React, { useState, useRef } from "react";
 import { Form, Button } from "react-bootstrap";
 import validateZipCode from "../../utils/validateZip";
 
-const SubmitForm = ({ setSubmittedZip }) => {
+const SubmitForm = ({ setSubmittedZip, setSubmitted }) => {
 	const [zipCode, setZipCode] = useState("");
 	const previousZipCodeRef = useRef("");
 
@@ -16,9 +16,11 @@ const SubmitForm = ({ setSubmittedZip }) => {
 				setTimeout(() => {
 					setSubmittedZip(zipCode);
 				}, 0);
+				setSubmitted();
 			} else {
 				setSubmittedZip(zipCode);
 				previousZipCodeRef.current = zipCode;
+				setSubmitted();
 			}
 		} else alert("Please enter a valid zip code");
 	};
