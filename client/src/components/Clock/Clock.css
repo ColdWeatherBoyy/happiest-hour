@@ -1,5 +1,8 @@
 :root {
-	--diameter: 42vw;
+	--diameter1: 77vh;
+	--diameter2: 85vw;
+	--diameter3: 55vh;
+
 }
 
 .clock-frame {
@@ -7,11 +10,11 @@
 	background-color: rgb(255, 255, 255);
 	border-radius: 50%;
 	position: relative;
-	margin-top: 1%;
+	margin-top: 1em;
 	margin-left: auto; 
 	margin-right: auto; 
-	width: var(--diameter);
-	height: var(--diameter);
+	width: var(--diameter1);
+	height: var(--diameter1);
 	z-index: 0;
 }
 
@@ -23,3 +26,20 @@
 	left: 50%;
 	transform: translate(-50%, -50%); /* translate(horizontal, vertical) */
 }
+
+@media (max-width: 950px) {
+	.clock-frame {
+		width: var(--diameter3);
+		height: var(--diameter3);
+		margin-top: 30%;
+	}
+}
+
+@media (max-width: 480px) {
+	.clock-frame {
+		width: var(--diameter2);
+		height: var(--diameter2);
+		margin-top: 40%;
+	}
+}
+
