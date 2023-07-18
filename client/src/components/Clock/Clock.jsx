@@ -1,9 +1,9 @@
 import "./Clock.css";
-import Numbers from "./Numbers/Numbers";
-import BarCardList from "../BarCard/BarCardList";
-import ClockHands from "./ClockHands/ClockHands";
+import Tickmarks from "./ClockComponents/Tickmarks/Tickmarks";
+import BarCardList from "./ClockComponents/BarCard/BarCardList";
+import ClockHands from "./ClockComponents/ClockHands/ClockHands";
 import SubmitForm from "../SubmitForm/SubmitForm";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const Clock = () => {
 	const [submittedZip, setSubmittedZip] = useState("");
@@ -18,7 +18,7 @@ const Clock = () => {
 
 	return (
 		<div className="clock-frame">
-			<Numbers />
+			<Tickmarks />
 			{submitted ? (
 				<>
 					<BarCardList happyHours={happyHours} />
