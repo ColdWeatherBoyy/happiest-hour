@@ -35,7 +35,7 @@ const SubmitForm = ({ handleZipSubmit }) => {
 				onSubmit={handleSubmit}
 			>
 				<Form.Group className="mb-2 col-8" controlId="zipCode">
-					<Form.Label>Zip Code</Form.Label>
+					{/* <Form.Label>Zip Code</Form.Label> */}
 					<Form.Control
 						type="text"
 						placeholder="Enter Zip Code"
