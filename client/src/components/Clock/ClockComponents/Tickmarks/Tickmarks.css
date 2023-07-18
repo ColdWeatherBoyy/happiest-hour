@@ -1,0 +1,36 @@
+.outer-clock-face {
+	overflow: hidden;
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 97%;
+	height: 97%;
+	border-radius: 50%;
+	border: 5px solid rgb(255, 255, 255);
+	z-index: 0;
+}
+
+.inner-clock-face-big {
+	position: absolute;
+	width: 85%;
+	height: 85%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 50%;
+	z-index: 0;
+	background-color: rgb(255, 255, 255);
+}
+
+.inner-clock-face-small {
+	position: absolute;
+	width: 79%;
+	height: 79%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 50%;
+	z-index: 1;
+	background-color: rgb(255, 255, 255);
+}
