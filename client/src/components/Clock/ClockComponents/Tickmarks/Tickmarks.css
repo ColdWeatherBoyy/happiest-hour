@@ -11,41 +11,26 @@
 	z-index: 0;
 }
 
-/* #radius {
-    position: absolute;
-    width: 92%;
-    height: 92%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    z-index: -1;
-	border: 5px solid rgb(186, 33, 150);
-} */
-
 .inner-clock-face-big {
-    /* visibility: hidden; */
-    position: absolute;
-    width: 85%;
-    height: 85%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    z-index: 0;
-    background-color: rgb(255, 255, 255);
+	position: absolute;
+	width: 85%;
+	height: 85%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 50%;
+	z-index: 0;
+	background-color: rgb(255, 255, 255);
 }
 
 .inner-clock-face-small {
-    /* visibility: hidden; */
-    position: absolute;
-    width: 79%;
-    height: 79%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    z-index: 1;
-    background-color: rgb(255, 255, 255);
+	position: absolute;
+	width: 79%;
+	height: 79%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 50%;
+	z-index: 1;
+	background-color: rgb(255, 255, 255);
 }
-

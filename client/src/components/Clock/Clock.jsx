@@ -18,7 +18,7 @@ const Clock = () => {
 
 	return (
 		<div className="clock-frame">
-			<Tickmarks />
+			<Tickmarks submitted={submitted} />
 			{submitted ? (
 				<>
 					<BarCardList happyHours={happyHours} />

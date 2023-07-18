@@ -1,13 +1,15 @@
 import "./Tickmarks.css";
 
-const Tickmarks = () => {
+const Tickmarks = ({ submitted }) => {
 	let num = Array.from({ length: 12 }).map((_, index) => {
 		index = index + 1;
 		return index;
 	});
 
+	const displayVal = submitted ? "hidden" : "visible";
+
 	return (
-		<div className="outer-clock-face">
+		<div className="outer-clock-face" style={{ visibility: displayVal }}>
 			{num.map((index) => {
 				return (
 					<div
