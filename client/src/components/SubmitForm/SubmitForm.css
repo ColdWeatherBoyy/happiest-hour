@@ -1,0 +1,7 @@
+#submit {
+	z-index: 1;
+	position: absolute;
+	top: 98%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}

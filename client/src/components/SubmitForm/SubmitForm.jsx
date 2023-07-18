@@ -1,19 +1,24 @@
-import "../Clock/Clock.css";
+import "./SubmitForm.css";
 import React, { useState, useRef } from "react";
 import { Form, Button } from "react-bootstrap";
-import getHappyHours from "../../utils/yelpRequest";
+import getHappyHoursFromYelp from "../../utils/getHappyHoursFromYelp";
 import validateZipCode from "../../utils/validateZip";
 
-const SubmitForm = ({ handleZipSubmit }) => {
+const SubmitForm = ({ handleZipSubmit, submitted }) => {
 	const [zipCode, setZipCode] = useState("");
+
+	const submissionStates = {
+		canEnter: submitted ? "disabled" : "",
+		canSubmit: submitted ? "hidden" : "visible",
+	};
 
 	const fetchData = async () => {
 		try {
-			const result = await getHappyHours(zipCode);
+			const result = await getHappyHoursFromYelp(zipCode);
 			if (result.length === 0) {
 				alert("Uh oh, there might not be any happy hours in your area... Try again!");
 			}
-			handleZipSubmit(zipCode, result);
+			handleZipSubmit(result);
 		} catch {
 			alert("Was that really a valid Zip Code? Try again...");
 		}
@@ -34,16 +39,25 @@ const SubmitForm = ({ handleZipSubmit }) => {
 				className="d-flex flex-column align-items-center text-center"
 				onSubmit={handleSubmit}
 			>
-				<Form.Group className="mb-2 col-8" controlId="zipCode">
-					<Form.Label>Zip Code</Form.Label>
+				<Form.Group
+					className="mb-2 col-8"
+					controlId="zipCode"
+					aria-label="Zip Code submission form"
+				>
 					<Form.Control
 						type="text"
 						placeholder="Enter Zip Code"
 						value={zipCode}
 						onChange={(e) => setZipCode(e.target.value)}
+						disabled={submissionStates.canEnter}
 					/>
 				</Form.Group>
-				<Button className="col-5" variant="primary" type="submit">
+				<Button
+					className="col-5"
+					variant="primary"
+					type="submit"
+					style={{ visibility: submissionStates.canSubmit }}
+				>
 					Search
 				</Button>
 			</Form>

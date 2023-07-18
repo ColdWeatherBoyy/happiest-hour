@@ -1,4 +1,4 @@
-const getHappyHours = async (zipCode) => {
+const getHappyHoursFromYelp = async (zipCode) => {
 	try {
 		const response = await fetch(`/api/yelp/${zipCode}`, {
 			method: "GET",
@@ -19,4 +19,4 @@ const getHappyHours = async (zipCode) => {
 	}
 };
 
-export default getHappyHours;
+export default getHappyHoursFromYelp;
