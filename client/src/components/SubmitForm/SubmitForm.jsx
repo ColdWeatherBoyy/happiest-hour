@@ -1,25 +1,29 @@
 import "../Clock/Clock.css";
 import React, { useState, useRef } from "react";
 import { Form, Button } from "react-bootstrap";
+import getHappyHours from "../../utils/yelpRequest";
 import validateZipCode from "../../utils/validateZip";
 
-const SubmitForm = ({ setSubmittedZip }) => {
+const SubmitForm = ({ handleZipSubmit }) => {
 	const [zipCode, setZipCode] = useState("");
-	const previousZipCodeRef = useRef("");
+
+	const fetchData = async () => {
+		try {
+			const result = await getHappyHours(zipCode);
+			if (result.length === 0) {
+				alert("Uh oh, there might not be any happy hours in your area... Try again!");
+			}
+			handleZipSubmit(zipCode, result);
+		} catch {
+			alert("Was that really a valid Zip Code? Try again...");
+		}
+	};
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		if (!zipCode) return alert("Please enter a zip code");
 		if (validateZipCode(zipCode)) {
-			if (zipCode === previousZipCodeRef.current) {
-				setSubmittedZip("");
-				setTimeout(() => {
-					setSubmittedZip(zipCode);
-				}, 0);
-			} else {
-				setSubmittedZip(zipCode);
-				previousZipCodeRef.current = zipCode;
-			}
+			fetchData();
 		} else alert("Please enter a valid zip code");
 	};
 
