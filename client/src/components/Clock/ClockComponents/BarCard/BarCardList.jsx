@@ -53,23 +53,33 @@ const BarCardList = ({ happyHours }) => {
 				<></>
 			) : (
 				coordinatesAndData.map(({ key, name, rating, x, y }) => {
-					const stars = <img src={star} style={{width: '20%', height: 'auto'}}/>
-					const half = <img src={halfStar}/>
-					let numStars;
-					
+					const tag = <img src={star} style={{width: '20%', height: 'auto'}}/>
+					const half = <img src={halfStar} style={{width: '10%', height: 'auto'}}/>
+					let numStars, stars;
+					console.log(rating)
+
+					if (rating === 5) {
+						stars = <span>{tag}{tag}{tag}{tag}{tag}</span>
+					} else if (rating === 4) {
+						stars = <span>{tag}{tag}{tag}{tag}</span>
+					} else if (rating === 3) {
+						stars = <span>{tag}{tag}{tag}</span>
+					} else if (rating === 2) {
+						stars = <span>{tag}{tag}</span>
+					} else if (rating === 1) {
+						stars = <span>{tag}</span>
+					} else if (4 < rating < 5) {
+						stars = <span>{tag}{tag}{tag}{tag}{half}</span>
+					}
+
 					// while (rating) {
 					// 	if (Number.isInteger(rating)) {
-					// 		for (let i = 0; i < numStars; i++) {
-								
-					// 		}
+					// 		console.log(rating)
+					// 		stars = <span>{tag.repeat(rating)}</span>
 					// 		break;
 					// 	} else {
 					// 		numStars = Math.floor(rating);
-					// 		for (let i = 0; i < numStars; i++) {
-					// 			<span></span>
-					// 			break;
-					// 		}
-							
+					// 		stars = <span>{tag.repeat(numStars)}</span>			
 					// 		break;
 					// 	}
 					// }
