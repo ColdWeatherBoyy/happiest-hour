@@ -1,5 +1,7 @@
 :root {
-	--diameter: 50vw;
+	--diameter1: 77vh;
+	--diameter2: 85vw;
+	--diameter3: 55vh;
 }
 
 .clock-frame {
@@ -7,8 +9,26 @@
 	background-color: rgb(255, 255, 255);
 	border-radius: 50%;
 	position: relative;
-	margin: 50px auto; /* top & bottom, right & left */
-	width: var(--diameter);
-	height: var(--diameter);
+	margin-top: 1em;
+	margin-left: auto;
+	margin-right: auto;
+	width: var(--diameter1);
+	height: var(--diameter1);
 	z-index: 0;
+}
+
+@media (max-width: 950px) {
+	.clock-frame {
+		width: var(--diameter3);
+		height: var(--diameter3);
+		margin-top: 30%;
+	}
+}
+
+@media (max-width: 480px) {
+	.clock-frame {
+		width: var(--diameter2);
+		height: var(--diameter2);
+		margin-top: 40%;
+	}
 }
