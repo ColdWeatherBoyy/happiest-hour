@@ -1,5 +1,4 @@
 function Card({ name, rating, xval, yval }) {
-
   return (
     <div
       style={{
@@ -12,8 +11,18 @@ function Card({ name, rating, xval, yval }) {
         transform: `translateX(${xval}px) translateY(${yval}px)`,
       }}
     >
-      <p>{name}</p>
-      <p>{rating}</p>
+      <p
+        style={{
+          marginBottom: "0",
+        }}
+      >
+        {name}
+      </p>
+      <p
+        style={{
+          marginBottom: "0",
+        }}
+      >{rating}</p>
     </div>
   );
 }

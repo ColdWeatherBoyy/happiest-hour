@@ -56,7 +56,7 @@ const BarCardList = ({ happyHours }) => {
 					const tag = <img src={star} style={{width: '20%', height: 'auto'}}/>
 					const half = <img src={halfStar} style={{width: '10%', height: 'auto'}}/>
 					let numStars, stars;
-					console.log(rating)
+					// console.log(rating)
 
 					if (rating === 5) {
 						stars = <span>{tag}{tag}{tag}{tag}{tag}</span>
@@ -74,15 +74,24 @@ const BarCardList = ({ happyHours }) => {
 
 					// while (rating) {
 					// 	if (Number.isInteger(rating)) {
-					// 		console.log(rating)
-					// 		stars = <span>{tag.repeat(rating)}</span>
+					// 		for (let i = 0; i < rating; i++) {
+					// 			tag += tag
+					// 		}
 					// 		break;
+					// 	} else if (rating === 0) {
+					// 		stars = '';
 					// 	} else {
 					// 		numStars = Math.floor(rating);
-					// 		stars = <span>{tag.repeat(numStars)}</span>			
+					// 		for (let i = 0; i < numStars; i++) {
+					// 			stars += tag
+					// 		}
+					// 		stars += half
 					// 		break;
 					// 	}
 					// }
+
+					// let shortName = name.slice(0, 20)
+					// console.log(shortName)
 					
 
 					return <BarCard key={key} name={name} rating={stars} xval={x} yval={y} />;
