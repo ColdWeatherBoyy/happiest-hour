@@ -13,7 +13,7 @@ function Card({ name, rating, xval, yval }) {
       }}
     >
       <p>{name}</p>
-      <p>{rating}/5 stars</p>
+      <p>{rating}</p>
     </div>
   );
 }

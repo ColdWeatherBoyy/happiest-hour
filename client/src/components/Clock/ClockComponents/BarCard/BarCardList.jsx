@@ -3,6 +3,9 @@ import BarCard from "./BarCard";
 import { useEffect, useState, useRef } from "react";
 import getWindowDimensions from "../../../../utils/hooks/useWindowDimensions";
 import calculateCoordinates from "../../../../utils/calculateCoordinates";
+import star from '../../../../assets/star.png';
+import halfStar from '../../../../assets/half-star.png';
+
 
 const BarCardList = ({ happyHours }) => {
 	const coordinatesRef = useRef(0);
@@ -43,14 +46,37 @@ const BarCardList = ({ happyHours }) => {
 			setLoading(false);
 		}
 	}, [coordinatesAndData]);
-
+	
 	return (
 		<div ref={coordinatesRef} className="container">
 			{loading ? (
 				<></>
 			) : (
 				coordinatesAndData.map(({ key, name, rating, x, y }) => {
-					return <BarCard key={key} name={name} rating={rating} xval={x} yval={y} />;
+					const stars = <img src={star} style={{width: '20%', height: 'auto'}}/>
+					const half = <img src={halfStar}/>
+					let numStars;
+					
+					// while (rating) {
+					// 	if (Number.isInteger(rating)) {
+					// 		for (let i = 0; i < numStars; i++) {
+								
+					// 		}
+					// 		break;
+					// 	} else {
+					// 		numStars = Math.floor(rating);
+					// 		for (let i = 0; i < numStars; i++) {
+					// 			<span></span>
+					// 			break;
+					// 		}
+							
+					// 		break;
+					// 	}
+					// }
+					
+
+					return <BarCard key={key} name={name} rating={stars} xval={x} yval={y} />;
+					// return <BarCard key={key} name={name} rating={rating} xval={x} yval={y} />;
 				})
 			)}
 		</div>
