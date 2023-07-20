@@ -5,6 +5,7 @@ import ClockHands from "./ClockComponents/ClockHands/ClockHands";
 import { useState } from "react";
 
 const Clock = ({ submitted, happyHours }) => {
+
 	return (
 		<div className="clock-frame">
 			<Tickmarks submitted={submitted} />
