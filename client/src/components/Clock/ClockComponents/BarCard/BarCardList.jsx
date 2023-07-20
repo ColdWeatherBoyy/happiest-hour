@@ -3,7 +3,7 @@ import BarCard from "./BarCard";
 import { useEffect, useState, useRef } from "react";
 import getWindowDimensions from "../../../../utils/hooks/useWindowDimensions";
 import calculateCoordinates from "../../../../utils/calculateCoordinates";
-import star from "../../../../assets/star.png";
+import star from "../../../../assets/new-star.png";
 import halfStar from "../../../../assets/half-star.png";
 
 const BarCardList = ({ happyHours }) => {
@@ -46,18 +46,6 @@ const BarCardList = ({ happyHours }) => {
     }
   }, [coordinatesAndData]);
 
-  function generateStars(rating) {
-    let stars = "<span>";
-    for (let i = 0; i < Math.floor(rating); i++) {
-      stars += "<img src={star} style={{width: '20%', height: 'auto'}}/>";
-    }
-    if (rating > Math.floor(rating)) {
-      stars += "<img src={halfStar} style={{width: '10%', height: 'auto'}}/>";
-    }
-    stars += "</span>";
-    return stars;
-  }
-
   return (
     <div ref={coordinatesRef} className="container">
       {loading ? (
@@ -65,19 +53,18 @@ const BarCardList = ({ happyHours }) => {
       ) : (
         coordinatesAndData.map(({ key, name, rating, x, y }) => {
           const tag = (
-            <img src={star} style={{ width: "20%", height: "auto" }} />
+            <img src={star} style={{ width: "17%", height: "auto" }} />
           );
           const half = (
-            <img src={halfStar} style={{ width: "10%", height: "auto" }} />
+            <img src={halfStar} style={{ width: "8.5%", height: "auto" }} />
           );
           let stars;
 
           stars = [...Array(Math.floor(rating))].map((x) => tag);
           if (rating > Math.floor(rating)) stars.push(half);
-          stars.push(rating);
 
           return (
-            <BarCard key={key} name={name} rating={stars} xval={x} yval={y} />
+            <BarCard key={key} name={name} stars={stars} rating={rating} xval={x} yval={y} />
           );
         })
       )}

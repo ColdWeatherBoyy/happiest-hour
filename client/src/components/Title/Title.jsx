@@ -5,7 +5,7 @@ const Title = () => {
 		<div className="pageTop title">
 			<h1 id="title">Happiest Hour</h1>
 			<h5 id="directions">
-				Don't you want to know where to drink? <br />
+				Do you want to know where to drink? <br />
 				Enter your zip code below.
 			</h5>
 		</div>

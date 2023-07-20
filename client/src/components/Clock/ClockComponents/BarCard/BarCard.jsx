@@ -1,12 +1,16 @@
-function Card({ name, rating, xval, yval }) {
+function Card({ name, stars, rating, xval, yval }) {
   return (
     <div
       style={{
         position: `absolute`,
         zIndex: `2`,
-        border: `1px solid green`,
+        // border: `1px solid green`,
+        background: 'black',
+        borderRadius: '5%',
+        color: 'whitesmoke',
         width: `20%`,
         height: `20%`,
+        fontSize: 'small',
         textAlign: `center`,
         transform: `translateX(${xval}px) translateY(${yval}px)`,
       }}
@@ -21,6 +25,12 @@ function Card({ name, rating, xval, yval }) {
       <p
         style={{
           marginBottom: "0",
+        }}
+      >{stars}</p>
+      <p
+        style={{
+          marginBottom: "0",
+
         }}
       >{rating}</p>
     </div>

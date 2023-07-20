@@ -29,7 +29,7 @@
 	.clock-frame {
 		width: var(--diameter2);
 		height: var(--diameter2);
-		margin-top: 30%;
+		margin-top: 10%;
 	}
 }
 
@@ -37,6 +37,6 @@
 	.clock-frame {
 		width: var(--diameter3);
 		height: var(--diameter3);
-		margin-top: 40%;
+		margin-top: 20%;
 	}
 }
