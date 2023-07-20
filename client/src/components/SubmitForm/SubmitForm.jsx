@@ -5,7 +5,7 @@ import { Form, Button } from "react-bootstrap";
 import getHappyHoursFromYelp from "../../utils/getHappyHoursFromYelp";
 import validateZipCode from "../../utils/validateZip";
 
-const SubmitForm = ({ handleZipSubmit, submitted, isMobile }) => {
+const SubmitForm = ({ handleZipSubmit, submitted }) => {
 	const [zipCode, setZipCode] = useState("");
 
 	const submissionStates = {
@@ -33,15 +33,12 @@ const SubmitForm = ({ handleZipSubmit, submitted, isMobile }) => {
 		} else alert("Please enter a valid zip code");
 	};
 
-	const topValue = isMobile ? "70%" : "75%";
-
 	return (
 		<>
 			<Form
 				id="submit"
 				className="d-flex flex-column align-items-center text-center"
 				onSubmit={handleSubmit}
-				style={{ top: topValue }}
 			>
 				<Form.Group
 					className="mb-2 col-8"

@@ -4,7 +4,7 @@ import BarCardList from "./ClockComponents/BarCard/BarCardList";
 import ClockHands from "./ClockComponents/ClockHands/ClockHands";
 import SubmitForm from "../SubmitForm/SubmitForm";
 
-const Clock = ({ submitted, happyHours, setHappyHours, handleZipSubmit, isMobile }) => {
+const Clock = ({ submitted, happyHours, handleZipSubmit, isMobile }) => {
 	return (
 		<div className="clock-frame">
 			<Tickmarks submitted={submitted} />
@@ -13,14 +13,7 @@ const Clock = ({ submitted, happyHours, setHappyHours, handleZipSubmit, isMobile
 			{isMobile ? (
 				<></>
 			) : (
-				<>
-					<SubmitForm
-						handleZipSubmit={handleZipSubmit}
-						submitted={submitted}
-						isMobile={isMobile}
-					/>
-					<p>From Clock</p>
-				</>
+				<SubmitForm handleZipSubmit={handleZipSubmit} submitted={submitted} />
 			)}
 		</div>
 	);

@@ -33,14 +33,7 @@ const Home = () => {
 				isMobile={isMobile}
 			/>
 			{isMobile ? (
-				<>
-					<SubmitForm
-						handleZipSubmit={handleZipSubmit}
-						submitted={submitted}
-						isMobile={isMobile}
-					/>
-					<p>From Home</p>
-				</>
+				<SubmitForm handleZipSubmit={handleZipSubmit} submitted={submitted} />
 			) : (
 				<></>
 			)}

@@ -1,33 +1,35 @@
-function Card({ name, rating, xval, yval }) {
-  return (
-    <div
-      style={{
-        position: `absolute`,
-        zIndex: `2`,
-        border: `1px solid green`,
-        width: `20%`,
-        height: `20%`,
-        textAlign: `center`,
-        transform: `translateX(${xval}px) translateY(${yval}px)`,
-      }}
-    >
-      <p
-        style={{
-          marginBottom: "0",
-        }}
-      >
-        {name}
-      </p>
-      <p
-        style={{
-          marginBottom: "0",
-        }}
-      >{rating}</p>
-    </div>
-  );
+function BarCard({ name, rating, xval, yval }) {
+	return (
+		<div
+			style={{
+				position: `absolute`,
+				zIndex: `2`,
+				border: `1px solid green`,
+				width: `20%`,
+				height: `20%`,
+				textAlign: `center`,
+				transform: `translateX(${xval}px) translateY(${yval}px)`,
+			}}
+		>
+			<p
+				style={{
+					marginBottom: "0",
+				}}
+			>
+				{name}
+			</p>
+			<p
+				style={{
+					marginBottom: "0",
+				}}
+			>
+				{rating}
+			</p>
+		</div>
+	);
 }
 
-export default Card;
+export default BarCard;
 
 // if width = 20%, then that's 20% of the container
 // we have access to the container dimensions in DataDisplay
