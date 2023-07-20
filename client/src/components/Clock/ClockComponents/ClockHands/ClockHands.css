@@ -49,9 +49,9 @@
 #second-hand {
 	position: absolute;
 	background-color: rgb(211, 0, 0);
-	width: 0.75%;
-	height: 38%;
-	left: 49.75%;
+	width: 0.5%;
+	height: 35%;
+	left: 49.5%;
 	bottom: 50%;
 	transform-origin: bottom center;
 	/* transform-origin: 0.375% 0%;  */
@@ -64,7 +64,7 @@
 	width: 2.1%;
 	height: 10%;
 	left: 49%;
-	top: 49.625%;
+	top: 49.65%;
 	border-bottom-left-radius: 10px;
 	border-bottom-right-radius: 10px;
 	transform-origin: top center;

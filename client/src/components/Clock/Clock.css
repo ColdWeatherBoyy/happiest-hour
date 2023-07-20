@@ -1,7 +1,7 @@
 :root {
 	--diameter1: 77vh;
-	--diameter2: 85vw;
-	--diameter3: 55vh;
+	--diameter2: 55vh;
+	--diameter3: 85vw;
 }
 
 .clock-frame {
@@ -17,18 +17,26 @@
 	z-index: 0;
 }
 
+/* #submit {
+	z-index: 1;
+	position: absolute;
+	top: 70%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+} */
+
 @media (max-width: 950px) {
 	.clock-frame {
-		width: var(--diameter3);
-		height: var(--diameter3);
+		width: var(--diameter2);
+		height: var(--diameter2);
 		margin-top: 30%;
 	}
 }
 
 @media (max-width: 480px) {
 	.clock-frame {
-		width: var(--diameter2);
-		height: var(--diameter2);
+		width: var(--diameter3);
+		height: var(--diameter3);
 		margin-top: 40%;
 	}
 }

@@ -1,4 +1,5 @@
 import "./SubmitForm.css";
+import "../Clock/Clock.css";
 import React, { useState, useRef } from "react";
 import { Form, Button } from "react-bootstrap";
 import getHappyHoursFromYelp from "../../utils/getHappyHoursFromYelp";
