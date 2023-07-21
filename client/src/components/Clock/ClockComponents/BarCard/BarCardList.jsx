@@ -7,38 +7,38 @@ import star from "../../../../assets/new-star.png";
 import halfStar from "../../../../assets/half-star.png";
 
 const BarCardList = ({ happyHours }) => {
-  const coordinatesRef = useRef(0);
-  const { width, height } = getWindowDimensions();
+	const coordinatesRef = useRef(0);
+	const { width, height } = getWindowDimensions();
 
-  const [coordinates, setCoordinates] = useState([]);
-  const [coordinatesAndData, setCoordinatesAndData] = useState([]);
-  const [loading, setLoading] = useState(true);
+	const [coordinates, setCoordinates] = useState([]);
+	const [coordinatesAndData, setCoordinatesAndData] = useState([]);
+	const [loading, setLoading] = useState(true);
 
-  // useEffect to reset coordinate state depending on the page size
-  useEffect(() => {
-    if (coordinatesRef.current) {
-      setCoordinates(calculateCoordinates(coordinatesRef.current.offsetWidth));
-    }
-    // waits for the width of the window to change using the useWindowDimensions hook in utils folder
-  }, [width, height]);
+	// useEffect to reset coordinate state depending on the page size
+	useEffect(() => {
+		if (coordinatesRef.current) {
+			setCoordinates(calculateCoordinates(coordinatesRef.current.offsetWidth));
+		}
+		// waits for the width of the window to change using the useWindowDimensions hook in utils folder
+	}, [width, height]);
 
-  useEffect(() => {
-    if (!happyHours || !coordinates) {
-      return;
-    }
-    // run through each object in both of our arrays to combine them in objects in our temporary Array
-    const tempCoordinatesAndData = coordinates.map((coordinate, index) => {
-      return {
-        key: index,
-        name: happyHours[index].name,
-        rating: happyHours[index].rating,
-        x: coordinate.x,
-        y: coordinate.y,
-      };
-    });
+	useEffect(() => {
+		if (!happyHours || !coordinates) {
+			return;
+		}
+		// run through each object in both of our arrays to combine them in objects in our temporary Array
+		const tempCoordinatesAndData = coordinates.map((coordinate, index) => {
+			return {
+				key: index,
+				name: happyHours[index].name,
+				rating: happyHours[index].rating,
+				x: coordinate.x,
+				y: coordinate.y,
+			};
+		});
 
-    setCoordinatesAndData(tempCoordinatesAndData);
-  }, [happyHours, coordinates]);
+		setCoordinatesAndData(tempCoordinatesAndData);
+	}, [happyHours, coordinates]);
 
   useEffect(() => {
     if (coordinatesAndData.length > 0) {
@@ -46,25 +46,49 @@ const BarCardList = ({ happyHours }) => {
     }
   }, [coordinatesAndData]);
 
+  function generateStars(rating) {
+    const fullStarImg = (
+      <img
+        src={star}
+        alt="full star"
+        style={{ width: "17%", height: "auto" }}
+      />
+    );
+    const halfStarImg = (
+      <img
+        src={halfStar}
+        alt="half star"
+        style={{ width: "8.5%", height: "auto" }}
+      />
+    );
+
+    const stars = [];
+
+    for (let i = 0; i < Math.floor(rating); i++) {
+      stars.push(<span key={`full_${i}`}>{fullStarImg}</span>);
+    }
+
+    if (rating > Math.floor(rating)) {
+      stars.push(<span key={`half_${Math.floor(rating)}`}>{halfStarImg}</span>);
+    }
+
+    return <span>{stars}</span>;
+  }
+
   return (
     <div ref={coordinatesRef} className="container">
       {loading ? (
         <></>
       ) : (
         coordinatesAndData.map(({ key, name, rating, x, y }) => {
-          const tag = (
-            <img src={star} style={{ width: "17%", height: "auto" }} />
-          );
-          const half = (
-            <img src={halfStar} style={{ width: "8.5%", height: "auto" }} />
-          );
-          let stars;
-
-          stars = [...Array(Math.floor(rating))].map((x) => tag);
-          if (rating > Math.floor(rating)) stars.push(half);
-
           return (
-            <BarCard key={key} name={name} stars={stars} rating={rating} xval={x} yval={y} />
+            <BarCard
+              key={key}
+              name={name}
+              rating={generateStars(rating)}
+              xval={x}
+              yval={y}
+            />
           );
         })
       )}

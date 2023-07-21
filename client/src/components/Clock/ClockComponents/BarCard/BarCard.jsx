@@ -1,4 +1,4 @@
-function Card({ name, stars, rating, xval, yval }) {
+function Card({ name, rating, xval, yval }) {
   return (
     <div
       style={{
@@ -10,7 +10,6 @@ function Card({ name, stars, rating, xval, yval }) {
         color: 'whitesmoke',
         width: `20%`,
         height: `20%`,
-        fontSize: 'small',
         textAlign: `center`,
         transform: `translateX(${xval}px) translateY(${yval}px)`,
       }}
@@ -26,18 +25,12 @@ function Card({ name, stars, rating, xval, yval }) {
         style={{
           marginBottom: "0",
         }}
-      >{stars}</p>
-      <p
-        style={{
-          marginBottom: "0",
-
-        }}
       >{rating}</p>
     </div>
   );
 }
 
-export default Card;
+export default BarCard;
 
 // if width = 20%, then that's 20% of the container
 // we have access to the container dimensions in DataDisplay
