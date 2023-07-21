@@ -7,10 +7,10 @@
 
 .cocktails img {
     position: relative;
-    /* z-index: 4; */
     width: 20%;
-    top: 95%;
-    transform: translate(0%, -50%);
+    top: 79%;
+    opacity: 50%;
+    /* transform: translate(0%, -50%); */
     /* background-color: red; */
 }
 

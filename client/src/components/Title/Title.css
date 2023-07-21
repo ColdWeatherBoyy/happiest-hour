@@ -13,15 +13,16 @@
 
 #lime {
     position: absolute;
+    opacity: 60%;
     width: 15%;
     height: auto;
     right: 92%;
     top: -10%;
 }
 
-#title {
-    /* position: absolute; */
-}
+/* #title {
+
+} */
 
 #directions {
     font-style: italic;
