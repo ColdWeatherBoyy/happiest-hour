@@ -1,0 +1,19 @@
+.cocktails {
+    position: absolute;
+    width: 100vw;
+    height: 77vh;
+    /* background-color: green; */
+}
+
+.cocktails img {
+    position: relative;
+    /* z-index: 4; */
+    width: 20%;
+    top: 95%;
+    transform: translate(0%, -50%);
+    /* background-color: red; */
+}
+
+#wine {
+    width: 15.5%;
+}

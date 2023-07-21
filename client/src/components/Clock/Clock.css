@@ -29,7 +29,7 @@
 	.clock-frame {
 		width: var(--diameter2);
 		height: var(--diameter2);
-		margin-top: 10%;
+		margin-top: 20%;
 	}
 }
 

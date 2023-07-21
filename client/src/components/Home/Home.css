@@ -1,0 +1,11 @@
+.cocktails {
+	position: relative;
+	background-color: red;
+	width: 100vw;
+}
+
+.cocktails #martini {
+    position: absolute;
+    width: 1em;
+    height: auto;
+}

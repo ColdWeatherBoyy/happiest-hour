@@ -1,19 +1,36 @@
 .pageTop {
-    text-align: center;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
+    margin-top: 2%;
+    text-align: center;
+}
+
+.logo {
+    position: relative;
+    /* display: inline-block; */
+    /* background-color: rgb(241, 76, 76); */
+}
+
+#lime {
+    position: absolute;
+    width: 15%;
+    height: auto;
+    right: 92%;
+    top: -10%;
 }
 
 #title {
-    padding: 0.5em 0;
+    /* position: absolute; */
 }
 
 #directions {
-    padding-top: 1em;
+    font-style: italic;
 }
+
 
 @media (max-width: 480px) {
 	.pageTop {
         flex-direction: column;
+        align-items: center;
     }
 }

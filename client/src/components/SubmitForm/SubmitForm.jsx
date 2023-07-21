@@ -55,7 +55,7 @@ const SubmitForm = ({ handleZipSubmit, submitted }) => {
 				</Form.Group>
 				<Button
 					className="col-5"
-					variant="primary"
+					variant="secondary"
 					type="submit"
 					style={{ visibility: submissionStates.canSubmit }}
 				>
