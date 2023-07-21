@@ -1,4 +1,4 @@
-function Card({ name, rating, xval, yval }) {
+function BarCard({ name, rating, xval, yval }) {
   return (
     <div
       style={{
