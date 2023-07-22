@@ -3,7 +3,7 @@ import BarCard from "./BarCard";
 import { useEffect, useState, useRef } from "react";
 import getWindowDimensions from "../../../../utils/hooks/useWindowDimensions";
 import calculateCoordinates from "../../../../utils/calculateCoordinates";
-import star from "../../../../assets/star.png";
+import star from "../../../../assets/new-star.png";
 import halfStar from "../../../../assets/half-star.png";
 
 const BarCardList = ({ happyHours }) => {
@@ -40,52 +40,60 @@ const BarCardList = ({ happyHours }) => {
 		setCoordinatesAndData(tempCoordinatesAndData);
 	}, [happyHours, coordinates]);
 
-	useEffect(() => {
-		if (coordinatesAndData.length > 0) {
-			setLoading(false);
-		}
-	}, [coordinatesAndData]);
+  useEffect(() => {
+    if (coordinatesAndData.length > 0) {
+      setLoading(false);
+    }
+  }, [coordinatesAndData]);
 
-	function generateStars(rating) {
-		const fullStarImg = (
-			<img src={star} alt="full star" style={{ width: "20%", height: "auto" }} />
-		);
-		const halfStarImg = (
-			<img src={halfStar} alt="half star" style={{ width: "10%", height: "auto" }} />
-		);
+  function generateStars(rating) {
+    const fullStarImg = (
+      <img
+        src={star}
+        alt="full star"
+        style={{ width: "17%", height: "auto" }}
+      />
+    );
+    const halfStarImg = (
+      <img
+        src={halfStar}
+        alt="half star"
+        style={{ width: "8.5%", height: "auto" }}
+      />
+    );
 
-		const stars = [];
+    const stars = [];
 
-		for (let i = 0; i < Math.floor(rating); i++) {
-			stars.push(<span key={`full_${i}`}>{fullStarImg}</span>);
-		}
+    for (let i = 0; i < Math.floor(rating); i++) {
+      stars.push(<span key={`full_${i}`}>{fullStarImg}</span>);
+    }
 
-		if (rating > Math.floor(rating)) {
-			stars.push(<span key={`half_${Math.floor(rating)}`}>{halfStarImg}</span>);
-		}
+    if (rating > Math.floor(rating)) {
+      stars.push(<span key={`half_${Math.floor(rating)}`}>{halfStarImg}</span>);
+    }
 
-		return <span>{stars}</span>;
-	}
+    return <span>{stars}</span>;
+  }
 
-	return (
-		<div ref={coordinatesRef} className="container">
-			{loading ? (
-				<></>
-			) : (
-				coordinatesAndData.map(({ key, name, rating, x, y }) => {
-					return (
-						<BarCard
-							key={key}
-							name={name}
-							rating={generateStars(rating)}
-							xval={x}
-							yval={y}
-						/>
-					);
-				})
-			)}
-		</div>
-	);
+  return (
+    <div ref={coordinatesRef} className="container">
+      {loading ? (
+        <></>
+      ) : (
+        coordinatesAndData.map(({ key, name, rating, x, y }) => {
+          return (
+            <BarCard
+              key={key}
+              name={name}
+              rating={generateStars(rating)}
+              xval={x}
+              yval={y}
+            />
+          );
+        })
+      )}
+    </div>
+  );
 };
 
 export default BarCardList;

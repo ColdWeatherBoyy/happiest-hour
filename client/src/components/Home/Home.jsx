@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import Clock from "../Clock/Clock";
 import Title from "../Title/Title";
+import Cocktails from "../Cocktails/Cocktails";
+import Clock from "../Clock/Clock";
 import SubmitForm from "../SubmitForm/SubmitForm";
 
 const Home = () => {
@@ -24,19 +25,22 @@ const Home = () => {
 
 	return (
 		<>
-			<Title />
-			<Clock
-				submitted={submitted}
-				happyHours={happyHours}
-				setHappyHours={setHappyHours}
-				handleZipSubmit={handleZipSubmit}
-				isMobile={isMobile}
-			/>
-			{isMobile ? (
-				<SubmitForm handleZipSubmit={handleZipSubmit} submitted={submitted} />
-			) : (
-				<></>
-			)}
+			<div>
+				<Title />
+				<Cocktails />
+				<Clock
+					submitted={submitted}
+					happyHours={happyHours}
+					setHappyHours={setHappyHours}
+					handleZipSubmit={handleZipSubmit}
+					isMobile={isMobile}
+				/>
+				{isMobile ? (
+					<SubmitForm handleZipSubmit={handleZipSubmit} submitted={submitted} />
+				) : (
+					<></>
+				)}
+			</div>
 		</>
 	);
 };

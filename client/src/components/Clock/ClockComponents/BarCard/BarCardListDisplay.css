@@ -1,9 +1,20 @@
-.container {
+/* .container {
 	position: relative;
-	/* border: 2px solid rgb(133, 27, 159); */
+	border: 2px solid rgb(133, 27, 159);
 	border-radius: 50%;
 	width: 90%;
 	height: 90%;
 	bottom: 92%;
+	padding: 0px;
+} */
+
+
+.container {
+	position: relative;
+	/* border: 2px solid rgb(133, 27, 159); */
+	border-radius: 50%;
+	width: 80%;
+	height: 80%;
+	bottom: 87%;
 	padding: 0px;
 }
