@@ -13,16 +13,14 @@
 
 #lime {
     position: absolute;
-    opacity: 60%;
-    width: 15%;
+    z-index: -1;
+    width: 17%;
     height: auto;
-    right: 92%;
-    top: -10%;
+    right: 91%;
+    top: -15%;
 }
 
-/* #title {
-
-} */
+/* https://www.freepik.com/icon/lemon_9712335#position=11 lime icon by Dai */
 
 #directions {
     font-style: italic;

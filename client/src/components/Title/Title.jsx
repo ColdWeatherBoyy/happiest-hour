@@ -1,5 +1,5 @@
 import "./Title.css";
-import lime from '../../assets/lime.png';
+import lime from '../../assets/lime-rotated.png';
 
 const Title = () => {
 	return (
