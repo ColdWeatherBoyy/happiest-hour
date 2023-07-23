@@ -5,12 +5,14 @@
 .pageTop {
     display: flex;
     justify-content: space-around;
-    margin-top: 2%;
+    /* margin-top: 2%; */
     text-align: center;
+    height: 10vh;
 }
 
 .logo {
     position: relative;
+    top: 25%;
     /* background-color: rgb(241, 76, 76); */
 }
 
@@ -27,6 +29,8 @@
 
 #directions {
     font-style: italic;
+    position: relative;
+    top: 25%;
 }
 
 
