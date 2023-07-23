@@ -76,7 +76,7 @@ const BarCardList = ({ happyHours }) => {
   }
 
   return (
-    <div ref={coordinatesRef} className="container">
+    <div ref={coordinatesRef} className="container" >
       {loading ? (
         <></>
       ) : (
