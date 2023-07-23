@@ -1,3 +1,10 @@
+* {
+    /* font-family: 'Amita', cursive; */
+    /* font-family: 'Oleo Script', cursive; */
+    /* font-family: 'Yatra One', cursive; */
+    font-family: 'Yeseva One', cursive;
+}
+
 .pageTop {
     display: flex;
     justify-content: space-around;
@@ -16,7 +23,7 @@
     width: 17%;
     height: auto;
     right: 91%;
-    top: -15%;
+    top: -25%;
 }
 
 /* https://www.freepik.com/icon/lemon_9712335#position=11 lime icon by Dai */
