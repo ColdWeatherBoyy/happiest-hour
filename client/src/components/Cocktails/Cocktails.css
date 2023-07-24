@@ -6,34 +6,30 @@
     padding-left: 1%;
     padding-right: 1%;
     width: 100vw;
-    height: 90vh;
+    height: 50vh;
+    bottom: 2%;
     /* background-color: green; */
-    padding-bottom: 2%;
 }
 
 .cocktails img {
     position: relative;
     width: auto;
-    height: 50%;
+    height: 30vw;
     opacity: 60%;
     /* background-color: red; */
 }
 
 
 #orange {
-    height: 60%;
+    height: 35vw;
 }
 
-@media (max-width: 950px) {
+/* @media (max-width: 950px) {
 	.cocktails {
-        height: 40vh;
-        bottom: 5%;
     }
 }
 
 @media (max-width: 480px) {
 	.cocktails {
-        height: 20vh;
-        bottom: 5%;
     }
-}
+} */
