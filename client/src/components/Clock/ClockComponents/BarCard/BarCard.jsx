@@ -40,14 +40,14 @@ function BarCard({ name, rating, xval, yval }) {
           marginBottom: "0",
         }}
       >
-        {name}
+        {rating}
       </p>
       <p
         style={{
           marginBottom: "0",
         }}
       >
-        {rating}
+        {name}
       </p>
     </div>
   );
