@@ -1,22 +1,14 @@
-import './Cocktails.css';
-import getWindowDimensions from '../../utils/hooks/useWindowDimensions';
-import cocktail1 from '../../assets/cocktail1.png';
-import cocktail2 from '../../assets/cocktail2.png';
-import cocktail3 from '../../assets/cocktail3.png';
-import cocktail4 from '../../assets/cocktail4.png';
-import cocktail5 from '../../assets/cocktail5.png';
+import "./Cocktails.css";
+import cocktailPics from "./CocktailsArray";
 
-function Cocktails () {
-    const { width, height } = getWindowDimensions();
-    
-    return(
-        <div className="cocktails">
-            <img src={cocktail1} alt="cocktail" />
-            <img src={cocktail4} alt="cocktail" />
-            <img src={cocktail3} alt="cocktail" />
-            <img src={cocktail2} alt="cocktail" id='orange' />
-            <img src={cocktail5} alt="cocktail" />
-        </div>
-)}
+function Cocktails() {
+  return (
+    <div className="cocktails">
+      {cocktailPics.map(({ id, pic, color }) => {
+        return <img key={id} src={pic} alt="cocktail" id={color} />;
+      })}
+    </div>
+  );
+}
 
 export default Cocktails;
