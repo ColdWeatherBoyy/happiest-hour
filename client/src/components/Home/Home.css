@@ -1,0 +1,19 @@
+#background {
+    width: 100vw;
+    position: absolute;
+    height: 40vh;
+    opacity: 80%;
+    /* visibility: hidden; */
+}
+
+@media (max-width: 950px) {
+	#background {
+        visibility: visible;
+    }
+}
+
+@media (max-width: 540px) {
+    #background {
+        visibility: visible;
+    }
+}

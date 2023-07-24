@@ -13,9 +13,9 @@
 	}
 }
 
-/* @media (max-width: 540px) {
+@media (max-width: 539px) {
 	#submit {
 		top: 65vh;
 		transform: translate(-50%, 0%);
 	}
-} */
+}

@@ -3,6 +3,8 @@ import Title from "../Title/Title";
 import Cocktails from "../Cocktails/Cocktails";
 import Clock from "../Clock/Clock";
 import SubmitForm from "../SubmitForm/SubmitForm";
+import background from '../../assets/HHbackground.png';
+import './Home.css';
 
 const Home = () => {
 	const [submitted, setSubmitted] = useState(false);
@@ -26,6 +28,7 @@ const Home = () => {
 	return (
 		<>
 			<div className="fullPage" >
+				<img src={background} alt="colorful waves" id="background"/>
 				<Title />
 				<Cocktails />
 				<Clock

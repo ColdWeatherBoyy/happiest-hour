@@ -41,7 +41,7 @@ const SubmitForm = ({ handleZipSubmit, submitted }) => {
 				onSubmit={handleSubmit}
 			>
 				<Form.Group
-					className="mb-2 col-8"
+					className="mb-2 col-9"
 					controlId="zipCode"
 					aria-label="Zip Code submission form"
 				>
