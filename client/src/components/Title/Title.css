@@ -59,6 +59,10 @@
         margin-left: 0vw;
     }
 
+    #title {
+        /* font-size: 2em; */
+    }
+
     #directions {
         margin-right: 0vw;
         top: 0%;
