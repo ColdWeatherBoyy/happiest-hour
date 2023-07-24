@@ -5,7 +5,6 @@
 .pageTop {
     display: flex;
     justify-content: space-around;
-    /* margin-top: 2%; */
     text-align: center;
     height: 10vh;
 }
@@ -33,10 +32,17 @@
     top: 25%;
 }
 
-
-@media (max-width: 480px) {
+@media (max-width: 950px) {
 	.pageTop {
         flex-direction: column;
         align-items: center;
+    }
+}
+
+@media (max-width: 540px) {
+	.pageTop {
+        flex-direction: column;
+        align-items: center;
+        padding-top: 7%;
     }
 }

@@ -9,7 +9,7 @@
 	background-color: rgb(255, 255, 255);
 	border-radius: 50%;
 	position: relative;
-	margin-top: 1em;
+	/* margin-top: 1em; */
 	margin-left: auto;
 	margin-right: auto;
 	width: var(--diameter1);
@@ -29,14 +29,14 @@
 	.clock-frame {
 		width: var(--diameter2);
 		height: var(--diameter2);
-		margin-top: 20%;
+		margin-top: 10%;
 	}
 }
 
-@media (max-width: 480px) {
+@media (max-width: 540px) {
 	.clock-frame {
 		width: var(--diameter3);
 		height: var(--diameter3);
-		margin-top: 20%;
+		margin-top: 7vh;
 	}
 }
