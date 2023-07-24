@@ -1,8 +1,21 @@
 #submit {
 	z-index: 1;
 	position: absolute;
-	top: 65vh;
+	top: 73%;
 	left: 50%;
-	transform: translate(-50%, 0%);
+	transform: translate(-50%, -50%);
 }
 
+@media (max-width: 950px) {
+	#submit {
+		top: 65vh;
+		transform: translate(-50%, 0%);
+	}
+}
+
+/* @media (max-width: 540px) {
+	#submit {
+		top: 65vh;
+		transform: translate(-50%, 0%);
+	}
+} */
