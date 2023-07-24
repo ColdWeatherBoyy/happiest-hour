@@ -4,7 +4,7 @@
 
 .pageTop {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     text-align: center;
     height: 10vh;
 }
@@ -12,7 +12,7 @@
 .logo {
     position: relative;
     top: 25%;
-    /* background-color: rgb(241, 76, 76); */
+    margin-left: 7vw;
 }
 
 #lime {
@@ -24,25 +24,65 @@
     top: -25%;
 }
 
+/* #logo {
+    position: relative;
+    width: 25vw;
+    height: auto;
+    top: 25%;
+    margin-left: 9vw;
+} */
+
 /* https://www.freepik.com/icon/lemon_9712335#position=11 lime icon by Dai */
+
+#title {
+    font-size: 3em;
+}
 
 #directions {
     font-style: italic;
     position: relative;
     top: 25%;
+    font-size: larger;
+    margin-right: 10vw;
 }
 
 @media (max-width: 950px) {
 	.pageTop {
         flex-direction: column;
+        justify-content: center;
         align-items: center;
+        padding-top: 7vh;
+    }
+
+    .logo {
+        margin-left: 0vw;
+    }
+
+    #directions {
+        margin-right: 0vw;
+        top: 0%;
     }
 }
 
 @media (max-width: 540px) {
 	.pageTop {
         flex-direction: column;
+        justify-content: center;
         align-items: center;
         padding-top: 7%;
+    }
+
+    .logo {
+        margin-left: 0vw;
+    }
+
+    #title {
+        font-size: 2em;
+    }
+
+    #directions {
+        margin-right: 0vw;
+        font-size: medium;
+        top: 30%;
     }
 }

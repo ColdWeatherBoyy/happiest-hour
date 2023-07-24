@@ -8,16 +8,13 @@ function BarCard({ name, rating, xval, yval }) {
         background: "rgb(255, 186, 108)",
         borderRadius: "50%",
         color: "rgb(22, 96, 12)",
-        // visibility: 'hidden',
         fontSize: '80%',
         width: `25%`,
         height: `25%`,
         textAlign: `center`,
         transform: `translateX(${xval}px) translateY(${yval}px)`,
-
         display: 'flex',
         flexDirection: 'column',
-        // alignItems: 'center',
         justifyContent: 'center'
       }}
     >
