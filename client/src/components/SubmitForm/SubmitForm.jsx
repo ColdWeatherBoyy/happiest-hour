@@ -49,19 +49,20 @@ const SubmitForm = ({ handleZipSubmit, submitted }) => {
 					<Form.Control
 						type="text"
 						placeholder="Enter Zip Code"
+						className="text-center"
 						value={zipCode}
 						onChange={(e) => setZipCode(e.target.value)}
 						// disabled={submissionStates.canEnter}
 					/>
 				</Form.Group>
-				<Button
+				{/* <Button
 					className="col-5"
 					variant="secondary"
 					type="submit"
 					// style={{ visibility: submissionStates.canSubmit }}
 				>
 					Search
-				</Button>
+				</Button> */}
 			</Form>
 		</>
 	);
