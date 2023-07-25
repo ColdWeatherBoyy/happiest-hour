@@ -8,10 +8,10 @@ import validateZipCode from "../../utils/validateZip";
 const SubmitForm = ({ handleZipSubmit, submitted }) => {
 	const [zipCode, setZipCode] = useState("");
 
-	const submissionStates = {
-		canEnter: submitted ? "disabled" : "",
-		canSubmit: submitted ? "hidden" : "visible",
-	};
+	// const submissionStates = {
+	// 	canEnter: submitted ? "disabled" : "",
+	// 	canSubmit: submitted ? "hidden" : "visible",
+	// };
 
 	const fetchData = async () => {
 		try {
@@ -27,6 +27,7 @@ const SubmitForm = ({ handleZipSubmit, submitted }) => {
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
+		setZipCode('');
 		if (!zipCode) return alert("Please enter a zip code");
 		if (validateZipCode(zipCode)) {
 			fetchData();
@@ -41,26 +42,27 @@ const SubmitForm = ({ handleZipSubmit, submitted }) => {
 				onSubmit={handleSubmit}
 			>
 				<Form.Group
-					className="mb-2 col-8"
+					className="mb-2 col-9"
 					controlId="zipCode"
 					aria-label="Zip Code submission form"
 				>
 					<Form.Control
 						type="text"
 						placeholder="Enter Zip Code"
+						className="text-center"
 						value={zipCode}
 						onChange={(e) => setZipCode(e.target.value)}
-						disabled={submissionStates.canEnter}
+						// disabled={submissionStates.canEnter}
 					/>
 				</Form.Group>
-				<Button
+				{/* <Button
 					className="col-5"
 					variant="secondary"
 					type="submit"
-					style={{ visibility: submissionStates.canSubmit }}
+					// style={{ visibility: submissionStates.canSubmit }}
 				>
 					Search
-				</Button>
+				</Button> */}
 			</Form>
 		</>
 	);

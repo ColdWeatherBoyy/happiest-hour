@@ -1,4 +1,4 @@
-function BarCard({ name, rating, xval, yval }) {
+function BarCard({ name, rating, xval, yval, fontSize }) {
   return (
     <div
       style={{
@@ -8,17 +8,14 @@ function BarCard({ name, rating, xval, yval }) {
         background: "rgb(255, 186, 108)",
         borderRadius: "50%",
         color: "rgb(22, 96, 12)",
-        // visibility: 'hidden',
-        fontSize: '80%',
+        fontSize: `${fontSize}%`,
         width: `25%`,
         height: `25%`,
         textAlign: `center`,
         transform: `translateX(${xval}px) translateY(${yval}px)`,
-
         display: 'flex',
         flexDirection: 'column',
-        // alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
       }}
     >
       <div
@@ -32,7 +29,7 @@ function BarCard({ name, rating, xval, yval }) {
           transformOrigin: 'center',
           top: '50%',
           left: '50%',
-          transform: 'translate(-50%, -50%)'
+          transform: 'translate(-50%, -50%)',
         }}
       ></div>
       <p
@@ -40,14 +37,14 @@ function BarCard({ name, rating, xval, yval }) {
           marginBottom: "0",
         }}
       >
-        {name}
+        {rating}
       </p>
       <p
         style={{
           marginBottom: "0",
         }}
       >
-        {rating}
+        {name}
       </p>
     </div>
   );
