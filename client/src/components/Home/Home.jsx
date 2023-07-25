@@ -25,7 +25,7 @@ const Home = () => {
 
 	return (
 		<>
-			<div>
+			<div className="fullPage" >
 				<Title />
 				<Cocktails />
 				<Clock
