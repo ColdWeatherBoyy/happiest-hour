@@ -8,7 +8,6 @@ function BarCard({ name, rating, xval, yval, fontSize }) {
         background: "rgb(255, 186, 108)",
         borderRadius: "50%",
         color: "rgb(22, 96, 12)",
-        // fontSize: '80%',
         fontSize: `${fontSize}%`,
         width: `25%`,
         height: `25%`,
@@ -16,7 +15,7 @@ function BarCard({ name, rating, xval, yval, fontSize }) {
         transform: `translateX(${xval}px) translateY(${yval}px)`,
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'center'
+        justifyContent: 'center',
       }}
     >
       <div
@@ -30,7 +29,7 @@ function BarCard({ name, rating, xval, yval, fontSize }) {
           transformOrigin: 'center',
           top: '50%',
           left: '50%',
-          transform: 'translate(-50%, -50%)'
+          transform: 'translate(-50%, -50%)',
         }}
       ></div>
       <p
