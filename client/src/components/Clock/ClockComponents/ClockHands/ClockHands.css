@@ -1,5 +1,5 @@
 #outer-center-point {
-	z-index: 1;
+	z-index: 2;
 	width: 7%;
 	height: 7%;
 	border-radius: 50%;
@@ -11,7 +11,7 @@
 }
 
 #inner-center-point {
-	z-index: 1;
+	z-index: 2;
 	width: 4%;
 	height: 4%;
 	border-radius: 50%;
@@ -24,6 +24,7 @@
 
 #hour-hand {
 	position: absolute;
+	z-index: 1;
 	background-color: rgb(0, 0, 0);
 	width: 2%;
 	height: 27%;
@@ -36,6 +37,7 @@
 
 #minute-hand {
 	position: absolute;
+	z-index: 1;
 	background-color: rgb(0, 0, 0);
 	width: 1.5%;
 	height: 32%;
@@ -48,6 +50,7 @@
 
 #second-hand {
 	position: absolute;
+	z-index: 1;
 	background-color: rgb(211, 0, 0);
 	width: 0.5%;
 	height: 35%;
@@ -59,6 +62,7 @@
 
 #second-hand-bottom {
 	position: absolute;
+	z-index: 1;
 	/* visibility: hidden; */
 	background-color: rgb(211, 0, 0);
 	width: 2.1%;

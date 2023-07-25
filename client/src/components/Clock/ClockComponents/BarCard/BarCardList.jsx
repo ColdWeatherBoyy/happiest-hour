@@ -77,7 +77,6 @@ const BarCardList = ({ happyHours }) => {
 
   function adjustFontSize() {
     let fontSize;
-    console.log(width)
     if (width <= 540) {
       fontSize = 50;
     } else if (width <= 950) {

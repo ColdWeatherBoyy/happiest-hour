@@ -5,7 +5,7 @@
 }
 
 .clock-frame {
-	border: 3px solid black;
+	border: 2px solid black;
 	background-color: rgb(255, 255, 255);
 	border-radius: 50%;
 	position: relative;
@@ -18,7 +18,17 @@
 }
 
 #clock-face-background {
-	
+	position: absolute;
+	/* visibility: hidden; */
+	width: 76.5vh;
+	height: 76.5vh;
+	border-radius: 50%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 1;
+	background-color: rgb(255, 233, 209);
+
 }
 
 /* #submit {
