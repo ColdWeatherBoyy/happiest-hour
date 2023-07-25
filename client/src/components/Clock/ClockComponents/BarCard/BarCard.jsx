@@ -1,4 +1,4 @@
-function BarCard({ name, rating, xval, yval }) {
+function BarCard({ name, rating, xval, yval, fontSize }) {
   return (
     <div
       style={{
@@ -8,7 +8,8 @@ function BarCard({ name, rating, xval, yval }) {
         background: "rgb(255, 186, 108)",
         borderRadius: "50%",
         color: "rgb(22, 96, 12)",
-        fontSize: '80%',
+        // fontSize: '80%',
+        fontSize: `${fontSize}%`,
         width: `25%`,
         height: `25%`,
         textAlign: `center`,

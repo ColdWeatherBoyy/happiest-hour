@@ -75,6 +75,19 @@ const BarCardList = ({ happyHours }) => {
     return <span>{stars}</span>;
   }
 
+  function adjustFontSize() {
+    let fontSize;
+    console.log(width)
+    if (width <= 540) {
+      fontSize = 50;
+    } else if (width <= 950) {
+      fontSize = 85;
+    } else {
+      fontSize = 80;
+    }
+    return fontSize
+  }
+
   return (
     <div ref={coordinatesRef} className="container" >
       {loading ? (
@@ -84,10 +97,12 @@ const BarCardList = ({ happyHours }) => {
           return (
             <BarCard
               key={key}
+              // name={name}
               name={name}
               rating={generateStars(rating)}
               xval={x}
               yval={y}
+              fontSize={adjustFontSize()}
             />
           );
         })

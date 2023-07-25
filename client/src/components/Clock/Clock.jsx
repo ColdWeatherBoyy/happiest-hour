@@ -15,6 +15,7 @@ const Clock = ({ submitted, happyHours, handleZipSubmit, isMobile }) => {
 			) : (
 				<SubmitForm handleZipSubmit={handleZipSubmit} submitted={submitted} />
 			)}
+			{/* <div id="clock-face-background"></div> */}
 		</div>
 	);
 };
