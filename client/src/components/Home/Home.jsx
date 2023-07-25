@@ -27,8 +27,9 @@ const Home = () => {
 
 	return (
 		<>
-			<div className="fullPage" >
-				<img src={background} alt="colorful waves" id="background"/>
+			<div className="background" >
+				{/* <img src={background} alt="colorful waves" id="background"/> */}
+				{/* <div className="background"></div> */}
 				<Title />
 				<Cocktails />
 				<Clock

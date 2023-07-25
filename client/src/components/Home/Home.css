@@ -1,19 +1,27 @@
-#background {
+/* #background {
     width: 100vw;
     position: absolute;
     height: 40vh;
     opacity: 80%;
-    /* visibility: hidden; */
+    visibility: hidden;
+} */
+
+.background {
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    /* background-color: rgba(0, 151, 0, 0.368); */
+    background: linear-gradient(165deg, rgba(255, 105, 82, 0.59) 60%, rgba(92, 183, 0, 0.589) 60%);
 }
 
 @media (max-width: 950px) {
 	#background {
-        visibility: visible;
+        /* visibility: visible; */
     }
 }
 
 @media (max-width: 540px) {
     #background {
-        visibility: visible;
+        /* visibility: visible; */
     }
 }

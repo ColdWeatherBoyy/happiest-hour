@@ -3,6 +3,7 @@
 }
 
 .pageTop {
+    position: relative;
     display: flex;
     justify-content: space-between;
     text-align: center;
@@ -17,25 +18,16 @@
 
 #lime {
     position: absolute;
-    /* z-index: 0; */
     width: 17%;
     height: auto;
-    right: 91%;
-    top: -25%;
-}
+    left: 0%;
+    transform: translate(-50%, -25%);
 
-/* #logo {
-    position: relative;
-    width: 25vw;
-    height: auto;
-    top: 25%;
-    margin-left: 9vw;
-} */
+}
 
 /* https://www.freepik.com/icon/lemon_9712335#position=11 lime icon by Dai */
 
 #title {
-    /* z-index: 1; */
     font-size: 3em;
 }
 
