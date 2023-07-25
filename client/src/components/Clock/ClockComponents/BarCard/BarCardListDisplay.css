@@ -12,6 +12,7 @@
 .container {
 	position: relative;
 	/* border: 2px solid rgb(133, 27, 159); */
+	/* background-color: rgb(255, 186, 108); */
 	border-radius: 50%;
 	width: 80%;
 	height: 80%;

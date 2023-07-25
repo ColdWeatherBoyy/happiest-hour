@@ -1,3 +1,10 @@
+* {
+    /* font-family: 'Amita', cursive; */
+    /* font-family: 'Oleo Script', cursive; */
+    /* font-family: 'Yatra One', cursive; */
+    font-family: 'Yeseva One', cursive;
+}
+
 .pageTop {
     display: flex;
     justify-content: space-around;
@@ -7,22 +14,19 @@
 
 .logo {
     position: relative;
-    /* display: inline-block; */
     /* background-color: rgb(241, 76, 76); */
 }
 
 #lime {
     position: absolute;
-    opacity: 60%;
-    width: 15%;
+    z-index: -1;
+    width: 17%;
     height: auto;
-    right: 92%;
-    top: -10%;
+    right: 91%;
+    top: -25%;
 }
 
-/* #title {
-
-} */
+/* https://www.freepik.com/icon/lemon_9712335#position=11 lime icon by Dai */
 
 #directions {
     font-style: italic;

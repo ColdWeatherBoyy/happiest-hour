@@ -1,5 +1,10 @@
 .cocktails {
     position: absolute;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding-left: 1%;
+    padding-right: 1%;
     width: 100vw;
     height: 77vh;
     /* background-color: green; */
@@ -7,13 +12,15 @@
 
 .cocktails img {
     position: relative;
-    width: 20%;
-    top: 79%;
-    opacity: 50%;
-    /* transform: translate(0%, -50%); */
+    width: auto;
+    height: 50%;
+    
+    top: 50%;
+    opacity: 60%;
+    /* z-index: 1; */
     /* background-color: red; */
 }
 
-#wine {
-    width: 15.5%;
+#orange {
+    height: 60%;
 }

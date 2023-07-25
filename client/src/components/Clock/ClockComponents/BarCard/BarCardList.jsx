@@ -51,14 +51,14 @@ const BarCardList = ({ happyHours }) => {
       <img
         src={star}
         alt="full star"
-        style={{ width: "17%", height: "auto" }}
+        style={{ width: "15%", height: "auto" }}
       />
     );
     const halfStarImg = (
       <img
         src={halfStar}
         alt="half star"
-        style={{ width: "8.5%", height: "auto" }}
+        style={{ width: "7.5%", height: "auto" }}
       />
     );
 
