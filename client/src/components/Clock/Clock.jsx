@@ -12,11 +12,11 @@ const Clock = ({ submitted, happyHours, handleZipSubmit, isMobile }) => {
 			<Tickmarks submitted={submitted} />
 			{submitted ? <BarCardList happyHours={happyHours} /> : <></>}
 			<ClockHands />
-			{isMobile ? (
+			{/* {isMobile ? (
 				<></>
 			) : (
 				<SubmitForm handleZipSubmit={handleZipSubmit} submitted={submitted} />
-			)}
+			)} */}
 		</div>
 	);
 };

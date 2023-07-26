@@ -27,7 +27,7 @@ const Home = () => {
   return (
     <>
       <div className="background">
-        <Title />
+        <Title handleZipSubmit={handleZipSubmit} isMobile={isMobile} submitted={submitted} />
         <Cocktails />
         <Clock
           submitted={submitted}
