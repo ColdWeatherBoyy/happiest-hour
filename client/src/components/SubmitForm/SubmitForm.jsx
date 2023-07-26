@@ -38,7 +38,7 @@ const SubmitForm = ({ handleZipSubmit, submitted }) => {
 		<>
 			<Form
 				id="submit"
-				className="d-flex flex-column align-items-center text-center"
+				className="d-flex flex-row text-center"
 				onSubmit={handleSubmit}
 			>
 				<Form.Group
@@ -55,14 +55,14 @@ const SubmitForm = ({ handleZipSubmit, submitted }) => {
 						// disabled={submissionStates.canEnter}
 					/>
 				</Form.Group>
-				{/* <Button
-					className="col-5"
+				<Button
+					className="col-4"
 					variant="secondary"
 					type="submit"
 					// style={{ visibility: submissionStates.canSubmit }}
 				>
 					Search
-				</Button> */}
+				</Button>
 			</Form>
 		</>
 	);

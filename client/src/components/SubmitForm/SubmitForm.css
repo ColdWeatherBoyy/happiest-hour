@@ -1,9 +1,10 @@
 #submit {
 	z-index: 1;
-	position: absolute;
-	top: 70%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+	position: relative;
+	margin-right: 6vw;
+	top: 4vh;
+	/* left: 50%; */
+	/* transform: translate(-50%, -50%); */
 }
 
 @media (max-width: 950px) {
