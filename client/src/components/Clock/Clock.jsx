@@ -7,7 +7,7 @@ import SubmitForm from "../SubmitForm/SubmitForm";
 const Clock = ({ submitted, happyHours, handleZipSubmit, isMobile }) => {
 	return (
 		<div className="clock-frame">
-			{submitted ? <div id="clock-face-background"></div> : <></>}
+			{/* {submitted ? <div id="clock-face-background"></div> : <></>} */}
 			
 			<Tickmarks submitted={submitted} />
 			{submitted ? <BarCardList happyHours={happyHours} /> : <></>}

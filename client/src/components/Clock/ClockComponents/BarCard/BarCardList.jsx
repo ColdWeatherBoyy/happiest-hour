@@ -14,6 +14,8 @@ const BarCardList = ({ happyHours }) => {
 	const [coordinatesAndData, setCoordinatesAndData] = useState([]);
 	const [loading, setLoading] = useState(true);
 
+
+  console.log(happyHours)
 	// useEffect to reset coordinate state depending on the page size
 	useEffect(() => {
 		if (coordinatesRef.current) {
