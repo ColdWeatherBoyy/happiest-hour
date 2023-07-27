@@ -5,8 +5,8 @@
 .pageTop {
     position: relative;
     display: flex;
-    padding-top: 1vh;
     justify-content: space-between;
+    padding-top: 2%;
     /* text-align: center; */
     height: 10vh;
 }
@@ -49,23 +49,23 @@
 
 @media (max-width: 950px) {
 	.pageTop {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding-top: 7vh;
+        /* flex-direction: column; */
+        /* justify-content: center; */
+        /* align-items: center; */
+        padding-top: 2vh;
     }
 
     .logo {
-        margin-left: 0vw;
+        /* margin-left: 0vw; */
     }
 
     #title {
-        /* font-size: 2em; */
+        font-size: 2em;
     }
 
     #directions {
-        margin-right: 0vw;
-        top: 0%;
+        /* margin-right: 0vw; */
+        /* top: 0%; */
     }
 }
 
@@ -74,20 +74,28 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding-top: 7%;
+        text-align: center;
+        padding-top: 8vh;
     }
 
     .logo {
-        margin-left: 0vw;
+        /* margin-left: 0vw; */
+        /* position: relative; */
+    }
+
+    #lime {
+        margin-left: 4vw;
     }
 
     #title {
         font-size: 1.75em;
+        margin-left: 4vw;
     }
 
     #directions {
-        margin-right: 0vw;
+        /* margin-right: 0vw; */
         font-size: small;
-        top: 20%;
+        margin-top: 18%;
+        /* top: 20%; */
     }
 }

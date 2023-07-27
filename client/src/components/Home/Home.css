@@ -8,12 +8,16 @@
 
 @media (max-width: 950px) {
 	.background {
-        background: linear-gradient(165deg, rgba(255, 105, 82, 0.59) 57%, rgba(92, 183, 0, 0.589) 57%);
+        /* background: linear-gradient(165deg, rgba(255, 105, 82, 0.59) 57%, rgba(92, 183, 0, 0.589) 57%); */
+    background: linear-gradient(165deg, rgba(255, 105, 82, 0.408) 60%, rgba(92, 183, 0, 0.361) 58%);
+
     }
 }
 
 @media (max-width: 540px) {
     .background {
-        background: linear-gradient(155deg, rgba(255, 105, 82, 0.59) 37%, rgba(92, 183, 0, 0.589) 37%);
+        /* background: linear-gradient(155deg, rgba(255, 105, 82, 0.59) 37%, rgba(92, 183, 0, 0.589) 37%); */
+    background: linear-gradient(165deg, rgba(255, 105, 82, 0.408) 60%, rgba(92, 183, 0, 0.361) 58%);
+
     }
 }
