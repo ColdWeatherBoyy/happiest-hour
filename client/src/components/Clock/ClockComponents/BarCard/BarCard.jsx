@@ -1,3 +1,5 @@
+import YelpLogo from "../../../../assets/yelp_logo.png";
+
 function BarCard({ name, rating, review_count, link, xval, yval, fontSize }) {
 	return (
 		<div
@@ -31,7 +33,19 @@ function BarCard({ name, rating, review_count, link, xval, yval, fontSize }) {
 					left: "50%",
 					transform: "translate(-50%, -50%)",
 				}}
-			></div>
+			/>
+			<a
+				href={link}
+				target="_blank"
+				rel="noopener noreferrer"
+				style={{
+					marginBottom: "0",
+					color: "rgb(22, 96, 12)",
+					fontSize: "120%",
+				}}
+			>
+				{name}
+			</a>
 			<p
 				style={{
 					marginBottom: "0",
@@ -47,17 +61,11 @@ function BarCard({ name, rating, review_count, link, xval, yval, fontSize }) {
 			>
 				Based on {review_count} reviews
 			</p>
-			<a
-				href={link}
-				target="_blank"
-				rel="noopener noreferrer"
-				style={{
-					marginBottom: "0",
-					color: "rgb(22, 96, 12)",
-				}}
-			>
-				{name}
-			</a>
+			<div style={{ width: "30%", margin: "0 auto" }}>
+				<a href={link} target="_blank" rel="noopener noreferrer">
+					<img alt="yelp logo" src={YelpLogo} style={{ width: "100%" }} />
+				</a>
+			</div>{" "}
 		</div>
 	);
 }

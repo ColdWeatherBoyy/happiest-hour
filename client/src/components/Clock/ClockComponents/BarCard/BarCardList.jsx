@@ -3,16 +3,16 @@ import BarCard from "./BarCard";
 import { useEffect, useState, useRef } from "react";
 import getWindowDimensions from "../../../../utils/hooks/useWindowDimensions";
 import calculateCoordinates from "../../../../utils/calculateCoordinates";
-import ZeroStarReview from "../../../../assets/regular_0.png";
-import OneStarReview from "../../../../assets/regular_1.png";
-import OneHalfStarReview from "../../../../assets/regular_1_half.png";
-import TwoStarReview from "../../../../assets/regular_2.png";
-import TwoHalfStarReview from "../../../../assets/regular_2_half.png";
-import ThreeStarReview from "../../../../assets/regular_3.png";
-import ThreeHalfStarReview from "../../../../assets/regular_3_half.png";
-import FourStarReview from "../../../../assets/regular_4.png";
-import FourHalfStarReview from "../../../../assets/regular_4_half.png";
-import FiveStarReview from "../../../../assets/regular_5.png";
+import ZeroStarReview from "../../../../assets/yelp_stars/web_and_ios/regular/regular_0.png";
+import OneStarReview from "../../../../assets/yelp_stars/web_and_ios/regular/regular_1.png";
+import OneHalfStarReview from "../../../../assets/yelp_stars/web_and_ios/regular/regular_1_half.png";
+import TwoStarReview from "../../../../assets/yelp_stars/web_and_ios/regular/regular_2.png";
+import TwoHalfStarReview from "../../../../assets/yelp_stars/web_and_ios/regular/regular_2_half.png";
+import ThreeStarReview from "../../../../assets/yelp_stars/web_and_ios/regular/regular_3.png";
+import ThreeHalfStarReview from "../../../../assets/yelp_stars/web_and_ios/regular/regular_3_half.png";
+import FourStarReview from "../../../../assets/yelp_stars/web_and_ios/regular/regular_4.png";
+import FourHalfStarReview from "../../../../assets/yelp_stars/web_and_ios/regular/regular_4_half.png";
+import FiveStarReview from "../../../../assets/yelp_stars/web_and_ios/regular/regular_5.png";
 
 const BarCardList = ({ happyHours }) => {
 	const coordinatesRef = useRef(0);
