@@ -38,31 +38,39 @@ const SubmitForm = ({ handleZipSubmit, submitted }) => {
 		<>
 			<Form
 				id="submit"
-				className="d-flex flex-column align-items-center text-center"
+				// className="d-flex text-center"
 				onSubmit={handleSubmit}
 			>
-				<Form.Group
-					className="mb-2 col-9"
-					controlId="zipCode"
-					aria-label="Zip Code submission form"
-				>
-					<Form.Control
-						type="text"
-						placeholder="Enter Zip Code"
-						className="text-center"
-						value={zipCode}
-						onChange={(e) => setZipCode(e.target.value)}
-						// disabled={submissionStates.canEnter}
-					/>
-				</Form.Group>
-				{/* <Button
-					className="col-5"
-					variant="secondary"
-					type="submit"
-					// style={{ visibility: submissionStates.canSubmit }}
-				>
-					Search
-				</Button> */}
+				<div className="d-flex flex-row justify-content-center ">
+					<div className="col-6">
+						<Form.Group
+							// className="mb-2 col-9"
+							controlId="zipCode"
+							aria-label="Zip Code submission form"
+						>
+							<Form.Control
+								type="text"
+								placeholder="Enter Zip Code"
+								// className="text-center"
+								value={zipCode}
+								onChange={(e) => setZipCode(e.target.value)}
+								// disabled={submissionStates.canEnter}
+							/>
+						</Form.Group>
+
+					</div>
+					<div className="col-3">
+						<Button
+							// className="col-4 p-0"
+							// className="w-100"
+							variant="secondary"
+							type="submit"
+							// style={{ visibility: submissionStates.canSubmit }}
+						>
+							Search
+						</Button>
+					</div>
+				</div>
 			</Form>
 		</>
 	);

@@ -6,14 +6,22 @@
     position: relative;
     display: flex;
     justify-content: space-between;
-    text-align: center;
+    padding-top: 2%;
+    /* text-align: center; */
     height: 10vh;
 }
 
+#textBlock {
+    display: flex;
+    flex-direction: column;
+    margin-left: 4vw;
+    /* justify-content: space-between; */
+}
+
 .logo {
-    position: relative;
-    top: 25%;
-    margin-left: 7vw;
+    position: absolute;
+    /* top: 25%; */
+    /* margin-left: 7vw; */
 }
 
 #lime {
@@ -22,64 +30,72 @@
     height: auto;
     left: 0%;
     transform: translate(-50%, -25%);
-
 }
 
 /* https://www.freepik.com/icon/lemon_9712335#position=11 lime icon by Dai */
 
 #title {
-    font-size: 3em;
+    font-size: 2.5em;
 }
 
 #directions {
     font-style: italic;
     position: relative;
-    top: 25%;
-    font-size: larger;
-    margin-right: 10vw;
+    /* top: 25%; */
+    font-size: medium;
+    margin-top: 20%;
+    /* margin-right: 10vw; */
 }
 
 @media (max-width: 950px) {
 	.pageTop {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding-top: 7vh;
+        /* flex-direction: column; */
+        /* justify-content: center; */
+        /* align-items: center; */
+        padding-top: 2vh;
     }
 
     .logo {
-        margin-left: 0vw;
+        /* margin-left: 0vw; */
     }
 
     #title {
-        /* font-size: 2em; */
+        font-size: 2em;
     }
 
     #directions {
-        margin-right: 0vw;
-        top: 0%;
+        /* margin-right: 0vw; */
+        /* top: 0%; */
     }
 }
 
-@media (max-width: 540px) {
+@media (max-width: 539px) {
 	.pageTop {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding-top: 7%;
+        text-align: center;
+        padding-top: 8vh;
     }
 
     .logo {
-        margin-left: 0vw;
+        /* margin-left: 0vw; */
+        /* position: relative; */
+    }
+
+    #lime {
+        margin-left: 4vw;
     }
 
     #title {
         font-size: 1.75em;
+        margin-left: 4vw;
     }
 
     #directions {
-        margin-right: 0vw;
+        /* margin-right: 0vw; */
         font-size: small;
-        top: 20%;
+        margin-top: 18%;
+        /* top: 20%; */
     }
 }
