@@ -1,17 +1,12 @@
 import "./SubmitForm.css";
 import "../Clock/Clock.css";
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import getHappyHoursFromYelp from "../../utils/getHappyHoursFromYelp";
 import validateZipCode from "../../utils/validateZip";
 
-const SubmitForm = ({ handleZipSubmit, submitted }) => {
+const SubmitForm = ({ handleZipSubmit }) => {
 	const [zipCode, setZipCode] = useState("");
-
-	// const submissionStates = {
-	// 	canEnter: submitted ? "disabled" : "",
-	// 	canSubmit: submitted ? "hidden" : "visible",
-	// };
 
 	const fetchData = async () => {
 		try {
@@ -27,7 +22,7 @@ const SubmitForm = ({ handleZipSubmit, submitted }) => {
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
-		setZipCode('');
+		setZipCode("");
 		if (!zipCode) return alert("Please enter a zip code");
 		if (validateZipCode(zipCode)) {
 			fetchData();
@@ -43,29 +38,32 @@ const SubmitForm = ({ handleZipSubmit, submitted }) => {
 			>
 				<div className="d-flex flex-row justify-content-center ">
 					<div className="col-6">
-						<Form.Group
-							// className="mb-2 col-9"
-							controlId="zipCode"
-							aria-label="Zip Code submission form"
-						>
+						<Form.Group controlId="zipCode" aria-label="Zip Code submission form">
 							<Form.Control
 								type="text"
 								placeholder="Enter Zip Code"
-								// className="text-center"
+								aria-label="Zip Code"
 								value={zipCode}
 								onChange={(e) => setZipCode(e.target.value)}
-								// disabled={submissionStates.canEnter}
+								style={{
+									borderTopRightRadius: "0",
+									borderBottomRightRadius: "0",
+									boxShadow: "inset 0 0 1px rgba(0, 0, 0, 0.2)",
+									padding: "0.375rem 0.5rem",
+								}}
 							/>
 						</Form.Group>
-
 					</div>
 					<div className="col-3">
 						<Button
-							// className="col-4 p-0"
-							// className="w-100"
 							variant="secondary"
 							type="submit"
-							// style={{ visibility: submissionStates.canSubmit }}
+							aria-label="Submit Zip Code"
+							style={{
+								marginLeft: "-5px",
+								border: "var(--bs-border-width) solid var(--bs-border-color)",
+								borderLeft: "none",
+							}}
 						>
 							Search
 						</Button>

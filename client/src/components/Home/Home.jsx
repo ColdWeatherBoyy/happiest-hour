@@ -6,44 +6,44 @@ import SubmitForm from "../SubmitForm/SubmitForm";
 import "./Home.css";
 
 const Home = () => {
-  const [submitted, setSubmitted] = useState(false);
-  const [happyHours, setHappyHours] = useState([]);
-  const [width, setWidth] = useState(window.innerWidth);
+	const [submitted, setSubmitted] = useState(false);
+	const [happyHours, setHappyHours] = useState([]);
+	const [width, setWidth] = useState(window.innerWidth);
 
-  const handleZipSubmit = (result) => {
-    setSubmitted(true);
-    setHappyHours(result);
-  };
+	const handleZipSubmit = (result) => {
+		setSubmitted(true);
+		setHappyHours(result);
+	};
 
-  useEffect(() => {
-    const handleResize = () => setWidth(window.innerWidth);
-    window.addEventListener("resize", handleResize);
-    // cleanup
-    return () => window.removeEventListener("resize", handleResize);
-  });
+	useEffect(() => {
+		const handleResize = () => setWidth(window.innerWidth);
+		window.addEventListener("resize", handleResize);
+		// cleanup
+		return () => window.removeEventListener("resize", handleResize);
+	});
 
-  const isMobile = width <= 480;
+	const isMobile = width <= 480;
 
-  return (
-    <>
-      <div className="background">
-        <Title handleZipSubmit={handleZipSubmit} isMobile={isMobile} submitted={submitted} />
-        <Cocktails />
-        <Clock
-          submitted={submitted}
-          happyHours={happyHours}
-          setHappyHours={setHappyHours}
-          handleZipSubmit={handleZipSubmit}
-          isMobile={isMobile}
-        />
-        {isMobile ? (
-          <SubmitForm handleZipSubmit={handleZipSubmit} submitted={submitted} />
-        ) : (
-          <></>
-        )}
-      </div>
-    </>
-  );
+	return (
+		<>
+			<div className="background">
+				<Title
+					handleZipSubmit={handleZipSubmit}
+					isMobile={isMobile}
+					submitted={submitted}
+				/>
+				<Cocktails />
+				<Clock
+					submitted={submitted}
+					happyHours={happyHours}
+					setHappyHours={setHappyHours}
+					handleZipSubmit={handleZipSubmit}
+					isMobile={isMobile}
+				/>
+				{isMobile ? <SubmitForm handleZipSubmit={handleZipSubmit} /> : <></>}
+			</div>
+		</>
+	);
 };
 
 export default Home;
