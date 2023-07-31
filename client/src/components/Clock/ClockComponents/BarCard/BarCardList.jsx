@@ -34,6 +34,7 @@ const BarCardList = ({ happyHours }) => {
 				key: index,
 				name: happyHours[index].name,
 				rating: happyHours[index].rating,
+        link: happyHours[index].url,
 				x: coordinate.x,
 				y: coordinate.y,
 			};
@@ -94,13 +95,14 @@ const BarCardList = ({ happyHours }) => {
       {loading ? (
         <></>
       ) : (
-        coordinatesAndData.map(({ key, name, rating, x, y }) => {
+        coordinatesAndData.map(({ key, name, rating, link, x, y }) => {
           return (
             <BarCard
               key={key}
               // name={name}
               name={name}
               rating={generateStars(rating)}
+              link={link}
               xval={x}
               yval={y}
               fontSize={adjustFontSize()}
