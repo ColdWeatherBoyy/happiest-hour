@@ -14,8 +14,7 @@ const BarCardList = ({ happyHours }) => {
 	const [coordinatesAndData, setCoordinatesAndData] = useState([]);
 	const [loading, setLoading] = useState(true);
 
-
-  console.log(happyHours)
+	console.log(happyHours);
 	// useEffect to reset coordinate state depending on the page size
 	useEffect(() => {
 		if (coordinatesRef.current) {
@@ -28,13 +27,15 @@ const BarCardList = ({ happyHours }) => {
 		if (!happyHours || !coordinates) {
 			return;
 		}
+		console.log(happyHours);
 		// run through each object in both of our arrays to combine them in objects in our temporary Array
 		const tempCoordinatesAndData = coordinates.map((coordinate, index) => {
 			return {
 				key: index,
 				name: happyHours[index].name,
 				rating: happyHours[index].rating,
-        link: happyHours[index].url,
+				review_count: happyHours[index].review_count,
+				link: happyHours[index].url,
 				x: coordinate.x,
 				y: coordinate.y,
 			};
@@ -43,75 +44,68 @@ const BarCardList = ({ happyHours }) => {
 		setCoordinatesAndData(tempCoordinatesAndData);
 	}, [happyHours, coordinates]);
 
-  useEffect(() => {
-    if (coordinatesAndData.length > 0) {
-      setLoading(false);
-    }
-  }, [coordinatesAndData]);
+	useEffect(() => {
+		if (coordinatesAndData.length > 0) {
+			setLoading(false);
+		}
+	}, [coordinatesAndData]);
 
-  function generateStars(rating) {
-    const fullStarImg = (
-      <img
-        src={star}
-        alt="full star"
-        style={{ width: "15%", height: "auto" }}
-      />
-    );
-    const halfStarImg = (
-      <img
-        src={halfStar}
-        alt="half star"
-        style={{ width: "7.5%", height: "auto" }}
-      />
-    );
+	function generateStars(rating) {
+		const fullStarImg = (
+			<img src={star} alt="full star" style={{ width: "15%", height: "auto" }} />
+		);
+		const halfStarImg = (
+			<img src={halfStar} alt="half star" style={{ width: "7.5%", height: "auto" }} />
+		);
 
-    const stars = [];
+		const stars = [];
 
-    for (let i = 0; i < Math.floor(rating); i++) {
-      stars.push(<span key={`full_${i}`}>{fullStarImg}</span>);
-    }
+		for (let i = 0; i < Math.floor(rating); i++) {
+			stars.push(<span key={`full_${i}`}>{fullStarImg}</span>);
+		}
 
-    if (rating > Math.floor(rating)) {
-      stars.push(<span key={`half_${Math.floor(rating)}`}>{halfStarImg}</span>);
-    }
+		if (rating > Math.floor(rating)) {
+			stars.push(<span key={`half_${Math.floor(rating)}`}>{halfStarImg}</span>);
+		}
 
-    return <span>{stars}</span>;
-  }
+		return <span>{stars}</span>;
+	}
 
-  function adjustFontSize() {
-    let fontSize;
-    if (width <= 540) {
-      fontSize = 50;
-    } else if (width <= 950) {
-      fontSize = 85;
-    } else {
-      fontSize = 80;
-    }
-    return fontSize
-  }
+	function adjustFontSize() {
+		let fontSize;
+		if (width <= 540) {
+			fontSize = 50;
+		} else if (width <= 950) {
+			fontSize = 85;
+		} else {
+			fontSize = 80;
+		}
+		return fontSize;
+	}
 
-  return (
-    <div ref={coordinatesRef} className="container" >
-      {loading ? (
-        <></>
-      ) : (
-        coordinatesAndData.map(({ key, name, rating, link, x, y }) => {
-          return (
-            <BarCard
-              key={key}
-              // name={name}
-              name={name}
-              rating={generateStars(rating)}
-              link={link}
-              xval={x}
-              yval={y}
-              fontSize={adjustFontSize()}
-            />
-          );
-        })
-      )}
-    </div>
-  );
+	return (
+		<div ref={coordinatesRef} className="container">
+			{loading ? (
+				<></>
+			) : (
+				coordinatesAndData.map(({ key, name, rating, review_count, link, x, y }) => {
+					return (
+						<BarCard
+							key={key}
+							// name={name}
+							name={name}
+							rating={generateStars(rating)}
+							review_count={review_count}
+							link={link}
+							xval={x}
+							yval={y}
+							fontSize={adjustFontSize()}
+						/>
+					);
+				})
+			)}
+		</div>
+	);
 };
 
 export default BarCardList;

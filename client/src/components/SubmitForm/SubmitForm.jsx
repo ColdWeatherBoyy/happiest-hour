@@ -46,6 +46,7 @@ const SubmitForm = ({ handleZipSubmit }) => {
 								value={zipCode}
 								onChange={(e) => setZipCode(e.target.value)}
 								style={{
+									marginRight: "-2.5px",
 									borderTopRightRadius: "0",
 									borderBottomRightRadius: "0",
 									boxShadow: "inset 0 0 1px rgba(0, 0, 0, 0.2)",
@@ -60,7 +61,7 @@ const SubmitForm = ({ handleZipSubmit }) => {
 							type="submit"
 							aria-label="Submit Zip Code"
 							style={{
-								marginLeft: "-5px",
+								marginLeft: "-2.5px",
 								border: "var(--bs-border-width) solid var(--bs-border-color)",
 								borderLeft: "none",
 							}}
