@@ -41,8 +41,8 @@ const SubmitForm = ({ handleZipSubmit, submitted }) => {
 				// className="d-flex text-center"
 				onSubmit={handleSubmit}
 			>
-				<div className="d-flex flex-row  ">
-					<div className="col-9">
+				<div className="d-flex flex-row justify-content-center ">
+					<div className="col-6">
 						<Form.Group
 							// className="mb-2 col-9"
 							controlId="zipCode"

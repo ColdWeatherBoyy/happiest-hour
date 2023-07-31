@@ -1,18 +1,19 @@
 #submit {
 	z-index: 1;
 	position: relative;
-	margin-right: 6vw;
+	margin-right: 2vw;
 	top: 4vh;
 }
 
-@media (max-width: 950px) {
+/* @media (max-width: 950px) {
 	#submit {
 		height: 10vh;
 	}
-}
+} */
 
 @media (max-width: 539px) {
 	#submit {
-		height: 10vh;
+		top: 8vh;
+		/* height: 10vh; */
 	}
 }
