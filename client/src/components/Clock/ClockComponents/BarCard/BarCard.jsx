@@ -1,4 +1,4 @@
-function BarCard({ name, rating, xval, yval, fontSize }) {
+function BarCard({ name, rating, link, xval, yval, fontSize }) {
   return (
     <div
       style={{
@@ -13,9 +13,9 @@ function BarCard({ name, rating, xval, yval, fontSize }) {
         height: `25%`,
         textAlign: `center`,
         transform: `translateX(${xval}px) translateY(${yval}px)`,
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
       }}
     >
       <div
@@ -26,10 +26,10 @@ function BarCard({ name, rating, xval, yval, fontSize }) {
           position: "absolute",
           borderRadius: "50%",
           zIndex: "-1",
-          transformOrigin: 'center',
-          top: '50%',
-          left: '50%',
-          transform: 'translate(-50%, -50%)',
+          transformOrigin: "center",
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
         }}
       ></div>
       <p
@@ -39,13 +39,17 @@ function BarCard({ name, rating, xval, yval, fontSize }) {
       >
         {rating}
       </p>
-      <p
+      <a
+        href={link}
+        target="_blank"
+        rel="noopener noreferrer"
         style={{
           marginBottom: "0",
+          color: "rgb(22, 96, 12)",
         }}
       >
         {name}
-      </p>
+      </a>
     </div>
   );
 }
