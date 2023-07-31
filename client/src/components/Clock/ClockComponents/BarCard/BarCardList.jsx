@@ -3,8 +3,16 @@ import BarCard from "./BarCard";
 import { useEffect, useState, useRef } from "react";
 import getWindowDimensions from "../../../../utils/hooks/useWindowDimensions";
 import calculateCoordinates from "../../../../utils/calculateCoordinates";
-import star from "../../../../assets/new-star.png";
-import halfStar from "../../../../assets/half-star.png";
+import ZeroStarReview from "../../../../assets/regular_0.png";
+import OneStarReview from "../../../../assets/regular_1.png";
+import OneHalfStarReview from "../../../../assets/regular_1_half.png";
+import TwoStarReview from "../../../../assets/regular_2.png";
+import TwoHalfStarReview from "../../../../assets/regular_2_half.png";
+import ThreeStarReview from "../../../../assets/regular_3.png";
+import ThreeHalfStarReview from "../../../../assets/regular_3_half.png";
+import FourStarReview from "../../../../assets/regular_4.png";
+import FourHalfStarReview from "../../../../assets/regular_4_half.png";
+import FiveStarReview from "../../../../assets/regular_5.png";
 
 const BarCardList = ({ happyHours }) => {
 	const coordinatesRef = useRef(0);
@@ -51,24 +59,19 @@ const BarCardList = ({ happyHours }) => {
 	}, [coordinatesAndData]);
 
 	function generateStars(rating) {
-		const fullStarImg = (
-			<img src={star} alt="full star" style={{ width: "15%", height: "auto" }} />
-		);
-		const halfStarImg = (
-			<img src={halfStar} alt="half star" style={{ width: "7.5%", height: "auto" }} />
-		);
-
-		const stars = [];
-
-		for (let i = 0; i < Math.floor(rating); i++) {
-			stars.push(<span key={`full_${i}`}>{fullStarImg}</span>);
-		}
-
-		if (rating > Math.floor(rating)) {
-			stars.push(<span key={`half_${Math.floor(rating)}`}>{halfStarImg}</span>);
-		}
-
-		return <span>{stars}</span>;
+		const reviewStarsObj = {
+			0: ZeroStarReview,
+			1: OneStarReview,
+			1.5: OneHalfStarReview,
+			2: TwoStarReview,
+			2.5: TwoHalfStarReview,
+			3: ThreeStarReview,
+			3.5: ThreeHalfStarReview,
+			4: FourStarReview,
+			4.5: FourHalfStarReview,
+			5: FiveStarReview,
+		};
+		return <img alt="review in stars" src={reviewStarsObj[rating]} />;
 	}
 
 	function adjustFontSize() {
