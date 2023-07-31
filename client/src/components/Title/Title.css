@@ -35,7 +35,7 @@
 /* https://www.freepik.com/icon/lemon_9712335#position=11 lime icon by Dai */
 
 #title {
-    font-size: 3em;
+    font-size: 2.5em;
 }
 
 #directions {
@@ -43,7 +43,7 @@
     position: relative;
     /* top: 25%; */
     font-size: medium;
-    margin-top: 25%;
+    margin-top: 20%;
     /* margin-right: 10vw; */
 }
 
