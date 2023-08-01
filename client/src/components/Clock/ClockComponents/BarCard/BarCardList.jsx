@@ -34,7 +34,6 @@ const BarCardList = ({ happyHours }) => {
 		if (!happyHours || !coordinates) {
 			return;
 		}
-		console.log(happyHours);
 		// run through each object in both of our arrays to combine them in objects in our temporary Array
 		const tempCoordinatesAndData = coordinates.map((coordinate, index) => {
 			return {
@@ -47,6 +46,7 @@ const BarCardList = ({ happyHours }) => {
 				y: coordinate.y,
 			};
 		});
+		console.log(tempCoordinatesAndData)
 
 		setCoordinatesAndData(tempCoordinatesAndData);
 	}, [happyHours, coordinates]);
@@ -70,20 +70,33 @@ const BarCardList = ({ happyHours }) => {
 			4.5: FourHalfStarReview,
 			5: FiveStarReview,
 		};
-		return <img alt="review in stars" src={reviewStarsObj[rating]} />;
+		return <img className="stars" alt="review in stars" src={reviewStarsObj[rating]} />;
 	}
 
-	function adjustFontSize() {
+	function adjustFontSize(name) {
 		let fontSize;
+		const nameStr = name.split(" ");
+
 		if (width <= 540) {
 			fontSize = 50;
 		} else if (width <= 950) {
 			fontSize = 85;
+		} else if (nameStr.length > 3) {
+			fontSize = 60;
 		} else {
 			fontSize = 80;
 		}
 		return fontSize;
 	}
+
+	// function maxNameLength(name) {
+	// 	const string = name.split(" ");
+
+	// 	console.log(string)
+	// 	if (string.length > 3) {
+
+	// 	}
+	// }
 
 	return (
 		<div ref={coordinatesRef} className="container">
@@ -94,14 +107,14 @@ const BarCardList = ({ happyHours }) => {
 					return (
 						<BarCard
 							key={key}
-							// name={name}
 							name={name}
+							// name={maxNameLength(name)}
 							rating={generateStars(rating)}
 							review_count={review_count}
 							link={link}
 							xval={x}
 							yval={y}
-							fontSize={adjustFontSize()}
+							fontSize={adjustFontSize(name)}
 						/>
 					);
 				})

@@ -56,10 +56,10 @@ function BarCard({ name, rating, review_count, link, xval, yval, fontSize }) {
 			<p
 				style={{
 					marginBottom: "0",
-					fontSize: "50%",
+					fontSize: "70%",
 				}}
 			>
-				Based on {review_count} reviews
+				{review_count} reviews
 			</p>
 			{/* <div style={{ width: "30%", margin: "0 auto" }}>
 				<a href={link} target="_blank" rel="noopener noreferrer">
