@@ -9,7 +9,7 @@ const Clock = ({ submitted, happyHours, handleZipSubmit, isMobile }) => {
 		<div className="clock-frame">
 			<Tickmarks submitted={submitted} />
 			{submitted ? <BarCardList happyHours={happyHours} /> : <></>}
-			<ClockHands />
+			<ClockHands submitted={submitted} />
 		</div>
 	);
 };

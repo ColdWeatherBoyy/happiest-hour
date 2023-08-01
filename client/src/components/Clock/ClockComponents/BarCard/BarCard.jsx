@@ -61,17 +61,13 @@ function BarCard({ name, rating, review_count, link, xval, yval, fontSize }) {
 			>
 				Based on {review_count} reviews
 			</p>
-			<div style={{ width: "30%", margin: "0 auto" }}>
+			{/* <div style={{ width: "30%", margin: "0 auto" }}>
 				<a href={link} target="_blank" rel="noopener noreferrer">
 					<img alt="yelp logo" src={YelpLogo} style={{ width: "100%" }} />
 				</a>
-			</div>{" "}
+			</div>{" "} */}
 		</div>
 	);
 }
 
 export default BarCard;
-
-// if width = 20%, then that's 20% of the container
-// we have access to the container dimensions in DataDisplay
-// subtracting 10% of the container width from xval & yval might move the cards to where they need to be
