@@ -3,8 +3,16 @@ import BarCard from "./BarCard";
 import { useEffect, useState, useRef } from "react";
 import getWindowDimensions from "../../../../utils/hooks/useWindowDimensions";
 import calculateCoordinates from "../../../../utils/calculateCoordinates";
-import star from "../../../../assets/new-star.png";
-import halfStar from "../../../../assets/half-star.png";
+import ZeroStarReview from "../../../../assets/yelp_stars/web_and_ios/regular/regular_0.png";
+import OneStarReview from "../../../../assets/yelp_stars/web_and_ios/regular/regular_1.png";
+import OneHalfStarReview from "../../../../assets/yelp_stars/web_and_ios/regular/regular_1_half.png";
+import TwoStarReview from "../../../../assets/yelp_stars/web_and_ios/regular/regular_2.png";
+import TwoHalfStarReview from "../../../../assets/yelp_stars/web_and_ios/regular/regular_2_half.png";
+import ThreeStarReview from "../../../../assets/yelp_stars/web_and_ios/regular/regular_3.png";
+import ThreeHalfStarReview from "../../../../assets/yelp_stars/web_and_ios/regular/regular_3_half.png";
+import FourStarReview from "../../../../assets/yelp_stars/web_and_ios/regular/regular_4.png";
+import FourHalfStarReview from "../../../../assets/yelp_stars/web_and_ios/regular/regular_4_half.png";
+import FiveStarReview from "../../../../assets/yelp_stars/web_and_ios/regular/regular_5.png";
 
 const BarCardList = ({ happyHours }) => {
 	const coordinatesRef = useRef(0);
@@ -14,8 +22,6 @@ const BarCardList = ({ happyHours }) => {
 	const [coordinatesAndData, setCoordinatesAndData] = useState([]);
 	const [loading, setLoading] = useState(true);
 
-
-  console.log(happyHours)
 	// useEffect to reset coordinate state depending on the page size
 	useEffect(() => {
 		if (coordinatesRef.current) {
@@ -34,84 +40,87 @@ const BarCardList = ({ happyHours }) => {
 				key: index,
 				name: happyHours[index].name,
 				rating: happyHours[index].rating,
-        link: happyHours[index].url,
+				review_count: happyHours[index].review_count,
+				link: happyHours[index].url,
 				x: coordinate.x,
 				y: coordinate.y,
 			};
 		});
+		console.log(tempCoordinatesAndData)
 
 		setCoordinatesAndData(tempCoordinatesAndData);
 	}, [happyHours, coordinates]);
 
-  useEffect(() => {
-    if (coordinatesAndData.length > 0) {
-      setLoading(false);
-    }
-  }, [coordinatesAndData]);
+	useEffect(() => {
+		if (coordinatesAndData.length > 0) {
+			setLoading(false);
+		}
+	}, [coordinatesAndData]);
 
-  function generateStars(rating) {
-    const fullStarImg = (
-      <img
-        src={star}
-        alt="full star"
-        style={{ width: "15%", height: "auto" }}
-      />
-    );
-    const halfStarImg = (
-      <img
-        src={halfStar}
-        alt="half star"
-        style={{ width: "7.5%", height: "auto" }}
-      />
-    );
+	function generateStars(rating) {
+		const reviewStarsObj = {
+			0: ZeroStarReview,
+			1: OneStarReview,
+			1.5: OneHalfStarReview,
+			2: TwoStarReview,
+			2.5: TwoHalfStarReview,
+			3: ThreeStarReview,
+			3.5: ThreeHalfStarReview,
+			4: FourStarReview,
+			4.5: FourHalfStarReview,
+			5: FiveStarReview,
+		};
+		return <img className="stars" alt="review in stars" src={reviewStarsObj[rating]} />;
+	}
 
-    const stars = [];
+	function adjustFontSize(name) {
+		let fontSize;
+		const nameStr = name.split(" ");
 
-    for (let i = 0; i < Math.floor(rating); i++) {
-      stars.push(<span key={`full_${i}`}>{fullStarImg}</span>);
-    }
+		if (width <= 540) {
+			fontSize = 50;
+		} else if (width <= 950) {
+			fontSize = 85;
+		} else if (nameStr.length > 3) {
+			fontSize = 60;
+		} else {
+			fontSize = 80;
+		}
+		return fontSize;
+	}
 
-    if (rating > Math.floor(rating)) {
-      stars.push(<span key={`half_${Math.floor(rating)}`}>{halfStarImg}</span>);
-    }
+	// function maxNameLength(name) {
+	// 	const string = name.split(" ");
 
-    return <span>{stars}</span>;
-  }
+	// 	console.log(string)
+	// 	if (string.length > 3) {
 
-  function adjustFontSize() {
-    let fontSize;
-    if (width <= 540) {
-      fontSize = 50;
-    } else if (width <= 950) {
-      fontSize = 85;
-    } else {
-      fontSize = 80;
-    }
-    return fontSize
-  }
+	// 	}
+	// }
 
-  return (
-    <div ref={coordinatesRef} className="container" >
-      {loading ? (
-        <></>
-      ) : (
-        coordinatesAndData.map(({ key, name, rating, link, x, y }) => {
-          return (
-            <BarCard
-              key={key}
-              // name={name}
-              name={name}
-              rating={generateStars(rating)}
-              link={link}
-              xval={x}
-              yval={y}
-              fontSize={adjustFontSize()}
-            />
-          );
-        })
-      )}
-    </div>
-  );
+	return (
+		<div ref={coordinatesRef} className="container">
+			{loading ? (
+				<></>
+			) : (
+				coordinatesAndData.map(({ key, name, rating, review_count, link, x, y }) => {
+					return (
+						<BarCard
+							key={key}
+							name={name}
+							// name={maxNameLength(name)}
+							rating={generateStars(rating)}
+							review_count={review_count}
+							link={link}
+							xval={x}
+							yval={y}
+							fontSize={adjustFontSize(name)}
+						/>
+					);
+				})
+			)}
+		</div>
+	);
 };
 
 export default BarCardList;
