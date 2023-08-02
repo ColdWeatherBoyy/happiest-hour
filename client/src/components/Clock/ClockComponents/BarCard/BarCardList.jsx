@@ -46,7 +46,7 @@ const BarCardList = ({ happyHours }) => {
 				y: coordinate.y,
 			};
 		});
-		console.log(tempCoordinatesAndData)
+		console.log(tempCoordinatesAndData);
 
 		setCoordinatesAndData(tempCoordinatesAndData);
 	}, [happyHours, coordinates]);
@@ -75,13 +75,24 @@ const BarCardList = ({ happyHours }) => {
 
 	function adjustFontSize(name) {
 		let fontSize;
-		const nameStr = name.split(" ");
+		const nameArr = name.split(" ");
 
 		if (width <= 540) {
 			fontSize = 50;
+			if (nameArr.length > 3) {
+				fontSize = 40;
+			}
+		} else if (width > 540 && width < 940) {
+			fontSize = 65;
+			if (nameArr.length > 3) {
+				fontSize = 48;
+			}
 		} else if (width <= 950) {
 			fontSize = 85;
-		} else if (nameStr.length > 3) {
+			if (nameArr.length > 3) {
+				fontSize = 55;
+			}
+		} else if (nameArr.length > 3) {
 			fontSize = 60;
 		} else {
 			fontSize = 80;

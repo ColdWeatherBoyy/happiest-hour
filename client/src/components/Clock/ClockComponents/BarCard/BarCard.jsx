@@ -1,12 +1,9 @@
-import YelpLogo from "../../../../assets/yelp_logo.png";
-
 function BarCard({ name, rating, review_count, link, xval, yval, fontSize }) {
 	return (
 		<div
 			style={{
 				position: `absolute`,
 				zIndex: `2`,
-				// border: `1px solid green`,
 				background: "rgb(255, 186, 108)",
 				borderRadius: "50%",
 				color: "rgb(22, 96, 12)",
@@ -18,12 +15,13 @@ function BarCard({ name, rating, review_count, link, xval, yval, fontSize }) {
 				display: "flex",
 				flexDirection: "column",
 				justifyContent: "center",
+				wordWrap: "break-word",
 			}}
 		>
 			<div
 				style={{
-					width: "80%",
-					height: "80%",
+					width: "85%",
+					height: "85%",
 					backgroundColor: "rgb(255, 162, 55)",
 					position: "absolute",
 					borderRadius: "50%",
@@ -56,7 +54,7 @@ function BarCard({ name, rating, review_count, link, xval, yval, fontSize }) {
 			<p
 				style={{
 					marginBottom: "0",
-					fontSize: "70%",
+					fontSize: "85%",
 				}}
 			>
 				{review_count} reviews

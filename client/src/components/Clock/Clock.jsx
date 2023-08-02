@@ -2,7 +2,6 @@ import "./Clock.css";
 import Tickmarks from "./ClockComponents/Tickmarks/Tickmarks";
 import BarCardList from "./ClockComponents/BarCard/BarCardList";
 import ClockHands from "./ClockComponents/ClockHands/ClockHands";
-import SubmitForm from "../SubmitForm/SubmitForm";
 
 const Clock = ({ submitted, happyHours, handleZipSubmit, isMobile }) => {
 	return (

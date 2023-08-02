@@ -1,11 +1,10 @@
 import "./Title.css";
-import logo from '../../assets/logo.png';
 import SubmitForm from "../SubmitForm/SubmitForm";
-import lime from '../../assets/lime-rotated.png';
+import lime from "../../assets/lime-rotated.png";
 
 const Title = ({ handleZipSubmit, isMobile, submitted }) => {
 	return (
-		<div className="pageTop" >
+		<div className="pageTop">
 			<div id="textBlock">
 				<div className="logo">
 					<img src={lime} alt="lime slice" id="lime" />
