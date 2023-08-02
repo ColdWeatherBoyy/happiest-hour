@@ -22,25 +22,39 @@ const Home = () => {
 		return () => window.removeEventListener("resize", handleResize);
 	});
 
-	const isMobile = width <= 480;
+	const isMobile = width <= 540;
+
+	const isMobileDisplay = {
+		display: isMobile ? "flex" : "",
+		flexDirection: isMobile ? "column" : "",
+		alignItems: isMobile ? "center" : "",
+	};
 
 	return (
 		<>
 			<div className="background">
-				<Title
-					handleZipSubmit={handleZipSubmit}
-					isMobile={isMobile}
-					submitted={submitted}
-				/>
-				<Cocktails />
-				<Clock
-					submitted={submitted}
-					happyHours={happyHours}
-					setHappyHours={setHappyHours}
-					handleZipSubmit={handleZipSubmit}
-					isMobile={isMobile}
-				/>
-				{isMobile ? <SubmitForm handleZipSubmit={handleZipSubmit} /> : <></>}
+				<div
+					style={{
+						display: isMobileDisplay.display,
+						flexDirection: isMobileDisplay.flexDirection,
+						alignItems: isMobileDisplay.alignItems,
+					}}
+				>
+					<Title
+						handleZipSubmit={handleZipSubmit}
+						isMobile={isMobile}
+						submitted={submitted}
+					/>
+					<Cocktails />
+					<Clock
+						submitted={submitted}
+						happyHours={happyHours}
+						setHappyHours={setHappyHours}
+						handleZipSubmit={handleZipSubmit}
+						isMobile={isMobile}
+					/>
+					{isMobile ? <SubmitForm handleZipSubmit={handleZipSubmit} /> : <></>}
+				</div>
 			</div>
 		</>
 	);
