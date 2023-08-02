@@ -1,5 +1,6 @@
 const getHappyHoursFromYelp = async (zipCode) => {
 	try {
+		// Fetch to yelp API using submitted ZipCode
 		const response = await fetch(`/api/yelp/${zipCode}`, {
 			method: "GET",
 			headers: {

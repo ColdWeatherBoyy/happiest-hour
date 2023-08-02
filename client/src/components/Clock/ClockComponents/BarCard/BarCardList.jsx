@@ -15,16 +15,23 @@ import FourHalfStarReview from "../../../../assets/yelp_stars/web_and_ios/regula
 import FiveStarReview from "../../../../assets/yelp_stars/web_and_ios/regular/regular_5.png";
 
 const BarCardList = ({ happyHours }) => {
+	// useRef to get the width of the container div
 	const coordinatesRef = useRef(0);
+	// getWindowDimensions hook to get the width of the window, defined in utils hooks folder
 	const { width, height } = getWindowDimensions();
 
+	// useState to hold the coordinates of each bar card
 	const [coordinates, setCoordinates] = useState([]);
+	// useState to hold the data and coordinates of each bar card
 	const [coordinatesAndData, setCoordinatesAndData] = useState([]);
+	// useState to hold the loading state of the page
 	const [loading, setLoading] = useState(true);
 
 	// useEffect to reset coordinate state depending on the page size
 	useEffect(() => {
+		// utilizes useRef to get the width of the container div, if it exists
 		if (coordinatesRef.current) {
+			// calculate the coordinates of each bar card, using utility function in utils folder and set them in coordinates state
 			setCoordinates(calculateCoordinates(coordinatesRef.current.offsetWidth));
 		}
 		// waits for the width of the window to change using the useWindowDimensions hook in utils folder
@@ -46,18 +53,20 @@ const BarCardList = ({ happyHours }) => {
 				y: coordinate.y,
 			};
 		});
-		console.log(tempCoordinatesAndData);
 
+		// set the state of coordinatesAndData from temporary array, using coordinates state and data from happyHours prop
 		setCoordinatesAndData(tempCoordinatesAndData);
 	}, [happyHours, coordinates]);
 
 	useEffect(() => {
+		// if coordinatesAndData has data, set loading to false
 		if (coordinatesAndData.length > 0) {
 			setLoading(false);
 		}
 	}, [coordinatesAndData]);
 
 	function generateStars(rating) {
+		// Object with all the star images by rating number
 		const reviewStarsObj = {
 			0: ZeroStarReview,
 			1: OneStarReview,
@@ -74,6 +83,7 @@ const BarCardList = ({ happyHours }) => {
 	}
 
 	function adjustFontSize(name) {
+		// acts as media query for font size prop
 		let fontSize;
 		const nameArr = name.split(" ");
 
@@ -100,31 +110,24 @@ const BarCardList = ({ happyHours }) => {
 		return fontSize;
 	}
 
-	// function maxNameLength(name) {
-	// 	const string = name.split(" ");
-
-	// 	console.log(string)
-	// 	if (string.length > 3) {
-
-	// 	}
-	// }
-
 	return (
 		<div ref={coordinatesRef} className="container">
 			{loading ? (
 				<></>
 			) : (
+				// once loading is set to false, map through coordinatesAndData state and return a BarCard component for each object.
 				coordinatesAndData.map(({ key, name, rating, review_count, link, x, y }) => {
 					return (
 						<BarCard
 							key={key}
 							name={name}
-							// name={maxNameLength(name)}
+							// Use generateStars function to return the correct star image for each bar card
 							rating={generateStars(rating)}
 							review_count={review_count}
 							link={link}
 							xval={x}
 							yval={y}
+							// use adjustFontSize function to return the correct font size for each bar card
 							fontSize={adjustFontSize(name)}
 						/>
 					);
