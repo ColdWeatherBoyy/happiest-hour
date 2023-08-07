@@ -5,15 +5,8 @@
 	top: 4vh;
 }
 
-/* @media (max-width: 950px) {
-	#submit {
-		height: 10vh;
-	}
-} */
-
 @media (max-width: 539px) {
 	#submit {
 		top: 8vh;
-		/* height: 10vh; */
 	}
 }

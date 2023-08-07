@@ -8,8 +8,7 @@
 	left: 50%;
 	transform: translate(-50%, -50%);
 	background-color: rgb(170, 170, 170);
-	box-shadow: -3px -3px 8px rgba(255, 255, 255, 0.570), 3px 3px 8px rgba(0, 0, 0, 0.533);
-
+	box-shadow: -3px -3px 8px rgba(255, 255, 255, 0.57), 3px 3px 8px rgba(0, 0, 0, 0.533);
 }
 
 #inner-center-point {
@@ -35,7 +34,6 @@
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	/* background-color: blue; */
 }
 #yelp-text {
 	text-align: center;
@@ -91,7 +89,6 @@
 #second-hand-bottom {
 	position: absolute;
 	z-index: 1;
-	/* visibility: hidden; */
 	background-color: rgb(211, 0, 0);
 	width: 2.1%;
 	height: 10%;

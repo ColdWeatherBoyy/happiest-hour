@@ -1,25 +1,22 @@
 .cocktails {
-    position: absolute;
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    padding-left: 1%;
-    padding-right: 1%;
-    width: 100vw;
-    height: 50vh;
-    bottom: 2%;
-    /* background-color: green; */
+	position: absolute;
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-between;
+	padding-left: 1%;
+	padding-right: 1%;
+	width: 100vw;
+	height: 50vh;
+	bottom: 2%;
 }
 
 .cocktails img {
-    position: relative;
-    width: auto;
-    height: 30vw;
-    opacity: 75%;
-    /* background-color: red; */
+	position: relative;
+	width: auto;
+	height: 30vw;
+	opacity: 75%;
 }
 
-
 #orange {
-    height: 35vw;
+	height: 35vw;
 }

@@ -19,6 +19,7 @@ app.use(
 	})
 );
 
+// routes to use
 app.use(routes);
 
 // setting static folder location

@@ -1,5 +1,8 @@
 function BarCard({ name, rating, review_count, link, xval, yval, fontSize }) {
 	return (
+		// establishes size of each card based on container width
+		// font size media query depending on screen size
+		// transform value places each card around in a circle
 		<div
 			style={{
 				position: `absolute`,
@@ -18,6 +21,7 @@ function BarCard({ name, rating, review_count, link, xval, yval, fontSize }) {
 				wordWrap: "break-word",
 			}}
 		>
+			{/* internal color circle placed depending on card size */}
 			<div
 				style={{
 					width: "85%",
@@ -42,14 +46,14 @@ function BarCard({ name, rating, review_count, link, xval, yval, fontSize }) {
 					fontSize: "120%",
 				}}
 			>
-				{name}
+				{name} {/* Bar Name with link */}
 			</a>
 			<p
 				style={{
 					marginBottom: "0",
 				}}
 			>
-				{rating}
+				{rating} {/* Rating of bar */}
 			</p>
 			<p
 				style={{
@@ -57,13 +61,8 @@ function BarCard({ name, rating, review_count, link, xval, yval, fontSize }) {
 					fontSize: "85%",
 				}}
 			>
-				{review_count} reviews
+				{review_count} reviews {/* Number of reviews */}
 			</p>
-			{/* <div style={{ width: "30%", margin: "0 auto" }}>
-				<a href={link} target="_blank" rel="noopener noreferrer">
-					<img alt="yelp logo" src={YelpLogo} style={{ width: "100%" }} />
-				</a>
-			</div>{" "} */}
 		</div>
 	);
 }

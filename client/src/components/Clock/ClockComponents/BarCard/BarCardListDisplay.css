@@ -1,20 +1,9 @@
-/* .container {
-	position: relative;
-	border: 2px solid rgb(133, 27, 159);
-	border-radius: 50%;
-	width: 95%;
-	height: 95%;
-	bottom: 94.5%;
-	padding: 0px;
-} */
-
 .stars {
 	width: 65%;
 }
 
 .container {
 	position: relative;
-	/* border: 2px solid rgb(133, 27, 159); */
 	border-radius: 50%;
 	width: 80%;
 	height: 80%;

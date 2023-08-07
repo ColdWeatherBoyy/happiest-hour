@@ -1,101 +1,76 @@
 * {
-    font-family: 'Yeseva One';
+	font-family: "Yeseva One";
 }
 
 .pageTop {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    padding-top: 2%;
-    /* text-align: center; */
-    height: 10vh;
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	padding-top: 2%;
+	height: 10vh;
 }
 
 #textBlock {
-    display: flex;
-    flex-direction: column;
-    margin-left: 4vw;
-    /* justify-content: space-between; */
+	display: flex;
+	flex-direction: column;
+	margin-left: 4vw;
 }
 
 .logo {
-    position: absolute;
-    /* top: 25%; */
-    /* margin-left: 7vw; */
+	position: absolute;
 }
 
 #lime {
-    position: absolute;
-    width: 17%;
-    height: auto;
-    left: 0%;
-    transform: translate(-50%, -25%);
+	position: absolute;
+	width: 17%;
+	height: auto;
+	left: 0%;
+	transform: translate(-50%, -25%);
 }
 
 /* https://www.freepik.com/icon/lemon_9712335#position=11 lime icon by Dai */
 
 #title {
-    font-size: 2.5em;
+	font-size: 2.5em;
 }
 
 #directions {
-    font-style: italic;
-    position: relative;
-    /* top: 25%; */
-    font-size: medium;
-    margin-top: 20%;
-    /* margin-right: 10vw; */
+	font-style: italic;
+	position: relative;
+	font-size: medium;
+	margin-top: 20%;
 }
 
 @media (max-width: 950px) {
 	.pageTop {
-        /* flex-direction: column; */
-        /* justify-content: center; */
-        /* align-items: center; */
-        padding-top: 2vh;
-    }
+		padding-top: 2vh;
+	}
 
-    .logo {
-        /* margin-left: 0vw; */
-    }
-
-    #title {
-        font-size: 2em;
-    }
-
-    #directions {
-        /* margin-right: 0vw; */
-        /* top: 0%; */
-    }
+	#title {
+		font-size: 2em;
+	}
 }
 
 @media (max-width: 539px) {
 	.pageTop {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        padding-top: 8vh;
-    }
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		padding-top: 8vh;
+	}
 
-    .logo {
-        /* margin-left: 0vw; */
-        /* position: relative; */
-    }
+	#lime {
+		margin-left: 4vw;
+	}
 
-    #lime {
-        margin-left: 4vw;
-    }
+	#title {
+		font-size: 1.75em;
+		margin-left: 4vw;
+	}
 
-    #title {
-        font-size: 1.75em;
-        margin-left: 4vw;
-    }
-
-    #directions {
-        /* margin-right: 0vw; */
-        font-size: small;
-        margin-top: 18%;
-        /* top: 20%; */
-    }
+	#directions {
+		font-size: small;
+		margin-top: 18%;
+	}
 }

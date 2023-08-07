@@ -1,41 +1,46 @@
 import "./SubmitForm.css";
 import "../Clock/Clock.css";
-import React, { useState } from "react";
+import { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import getHappyHoursFromYelp from "../../utils/getHappyHoursFromYelp";
 import validateZipCode from "../../utils/validateZip";
 
 const SubmitForm = ({ handleZipSubmit }) => {
+	// Sets up state for zip code input
 	const [zipCode, setZipCode] = useState("");
 
+	// Function to fetch data from Yelp API
 	const fetchData = async () => {
 		try {
+			// Ues getHappyHoursFromYelp function to fetch data from Yelp API
 			const result = await getHappyHoursFromYelp(zipCode);
 			if (result.length === 0) {
 				alert("Uh oh, there might not be any happy hours in your area... Try again!");
 			}
+			// Passes data to parent component using handleZipSubmit prop
 			handleZipSubmit(result);
 		} catch {
 			alert("Was that really a valid Zip Code? Try again...");
 		}
 	};
 
+	// Function to handle zip code submission
 	const handleSubmit = (event) => {
 		event.preventDefault();
+		// Resets zip code input
 		setZipCode("");
+		// Checks if zip code input is empty
 		if (!zipCode) return alert("Please enter a zip code");
+		// Checks if zip code input is valid, using validateZipCode function
 		if (validateZipCode(zipCode)) {
+			// If zip code is valid, fetch data from Yelp API
 			fetchData();
 		} else alert("Please enter a valid zip code");
 	};
 
 	return (
 		<>
-			<Form
-				id="submit"
-				// className="d-flex text-center"
-				onSubmit={handleSubmit}
-			>
+			<Form id="submit" onSubmit={handleSubmit}>
 				<div className="d-flex flex-row justify-content-center ">
 					<div className="col-6">
 						<Form.Group controlId="zipCode" aria-label="Zip Code submission form">

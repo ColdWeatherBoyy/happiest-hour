@@ -3,12 +3,12 @@ require("dotenv").config({ path: "../.env" });
 
 const router = Router();
 
+// Yelp API key
 const YELP_API_KEY = process.env.YELP_API_KEY;
 
-// /api/yelp – eventually will need a req.body for dynamic location
+// GET /api/yelp/:zipCode for Yelp API
 router.get("/:zipCode", async (req, res) => {
 	const { zipCode } = req.params;
-	console.log(zipCode);
 	const yelpUrl = `https://api.yelp.com/v3/businesses/search?term=happy%20hour&location=${zipCode}&limit=12&sort_by=rating`;
 	const headers = {
 		Authorization: `Bearer ${YELP_API_KEY}`,

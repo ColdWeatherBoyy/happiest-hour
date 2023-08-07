@@ -15,6 +15,7 @@ const Title = ({ handleZipSubmit, isMobile, submitted }) => {
 					Enter your zip code.
 				</p>
 			</div>
+			{/* If isMobile prop is false, render SubmitForm in Title */}
 			{isMobile ? (
 				<></>
 			) : (
