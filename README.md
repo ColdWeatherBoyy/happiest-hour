@@ -81,11 +81,25 @@ Upon clicking enter, the clock will populate with the top 12 happy hours in that
 ## Contributing
 
 ## License
-Distributed under the MIT License. See `LICENSE.txt` for more information.
+Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
+<div style="text-align:center;">
+<img src='./client/src/assets/elias.png' alt='Elias Spector-Zabusky' width='auto' height='50' style="text-align:center;" >
+<img src='./client/src/assets/liza.png' alt='Liza Parr' width='auto' height='50' style="text-align:center;" >
+</div>
+
+
+Elias Spector-Zabusky - [LinkedIn](https://www.linkedin.com/in/elias-sz/) - elias.spector.zabusky@gmail.com   
+Liza Parr - [LinkedIn](https://www.linkedin.com/in/lizajparr/) - lizajparr@gmail.com
+
+Project Link: [https://github.com/ColdWeatherBoyy/happiest-hour](https://github.com/ColdWeatherBoyy/happiest-hour)
 
 ## Acknowledgements
+* []()
+* []()
+* [Othneil Drew](https://github.com/othneildrew) 
+
 <!--
 ## Credits
 
