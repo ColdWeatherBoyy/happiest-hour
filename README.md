@@ -1,8 +1,6 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Contributors][contributors-shield]][contributors-url]
 
-<!-- ![GitHub Contributors Image](https://contrib.rocks/image?repo=ColdWeatherBoyy/happiest-hour) -->
-
 <div style="text-align:center;">
   <a href="https://github.com/github_username/repo_name">
     <img src="./client/src/assets/favicon.ico" alt="Logo" width="100" height="auto">
