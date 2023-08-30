@@ -36,30 +36,29 @@
 </details>
 
 ## About the Project
+
 <!-- feel free to add/edit -->
 
 <div style="text-align:center;">
 <img src='./client/src/assets/Happiest-Hour-pic.png' alt='Happiest Hour landing page' width='400' height='auto' style="text-align:center;" >
 </div>
 
-This project was created as a creative way to gather highly rated bar names & links (from one area) in one space. Happiest Hour began as a fully functioning application with a complete backend and basic HTML frontend. Elias and Liza partnered to integrate the backend to a user-friendly UI. They also wanted to continue challenging themselves after gratuating from a fullstack web development bootcamp - the clock posed many UI and functionality challenges in terms of geometry, syncronicity, and UX.
+This project was created as a creative way to gather highly rated bar names & links (from one area) in one space. Happiest Hour began as a fully functioning application with a complete backend and basic HTML frontend. Liza led the frontend design, while Elias led the backend work. They partnered to integrate the backend to a user-friendly UI. They also wanted to continue challenging themselves after graduating from a fullstack web development bootcamp - the clock posed many UI and functionality challenges in terms of geometry, syncronicity, and UX.
 
-Overall, they learned much about React and how to leverage props, writing clean code, and working with a symmetrical, functional element such as a clock.
+Overall, they learned much about React and how to leverage props, writing clean and readable code, utilizing Yelp's API, and working with a symmetrical, functional element such as a clock.
 
 ## Built With
-<!-- feel free to add what I missed -->
 
 - ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 - ![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)
 - ![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
 - ![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 - ![Express](https://img.shields.io/badge/Express%20js-000000?style=for-the-badge&logo=express&logoColor=white)
+- ![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
+- ![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
 - ![Dribble](https://img.shields.io/badge/Dribbble-EA4C89?style=for-the-badge&logo=dribbble&logoColor=white)
 - ![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
 - ![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)
-
-## Installation
-<!-- don't know what to put here -->
 
 ## Usage
 
@@ -72,47 +71,49 @@ To use Happiest Hour, enter your desired zip code in the search field:
 </div>
 The search field appears in the top right corner on desktop & tablets. On mobile, it appears beneath the clock.
 
-Upon clicking enter, the clock will populate with the top 12 happy hours in that area.
+Upon submitting, the clock will populate with the top 12 happy hours in that area.
+
 <div style="text-align:center;">
 <img src='./client/src/assets/populated.png' alt='Populated clock' width='400' height='auto' style="text-align:center;" >
 </div>
 
 ## Roadmap
-1. Refactoring font size to handle for different lengths or bar names & the space they can take up.
-2. Display zip code on page after search.
-3. Improve the performance aspect of the lighthouse report.
 
+1. Refactoring font size to handle for different lengths or bar names & the space they can take up. Though this was started, we discovered issues with just how long some bar names can be!
+2. Display zip code on page after search – to allow user to keep track of where their current results are for.
+3. Improve the performance aspect of the lighthouse report.
+4. Use the dynamically sized images provided by Yelp for the stars.
+5. Add animation to the clock hands on search.
+6. Create pop-up modals for the bars to provide more in-site information.
 
 See the [open issues](https://github.com/ColdWeatherBoyy/happiest-hour/issues) for a full list of future developments and known issues.
 
-
-## Contributing
-<!-- not sure what to put here -->
-
 ## License
+
 Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
+
 <div style="text-align:center;">
 <img src='./client/src/assets/elias.png' alt='Elias Spector-Zabusky' width='auto' height='50' style="text-align:center;" >
 <img src='./client/src/assets/liza.png' alt='Liza Parr' width='auto' height='50' style="text-align:center;" >
 </div>
 
-Elias Spector-Zabusky - [LinkedIn](https://www.linkedin.com/in/elias-sz/) - elias.spector.zabusky@gmail.com   
-Liza Parr - [LinkedIn](https://www.linkedin.com/in/lizajparr/) - lizajparr@gmail.com
+Elias Spector-Zabusky - [LinkedIn](https://www.linkedin.com/in/elias-sz/) - [GitHub](https://www.github.com/ColdWeatherBoyy) – elias.spector.zabusky@gmail.com  
+Liza Parr - [LinkedIn](https://www.linkedin.com/in/lizajparr/) - [GitHub](https://github.com/lparr30) – lizajparr@gmail.com
 
-Project Link: [https://github.com/ColdWeatherBoyy/happiest-hour](https://github.com/ColdWeatherBoyy/happiest-hour)
+Repo: [https://github.com/ColdWeatherBoyy/happiest-hour](https://github.com/ColdWeatherBoyy/happiest-hour)
 
 ## Acknowledgements
-* [useWindowDimensions custom hook](https://stackoverflow.com/questions/36862334/get-viewport-window-height-in-reactjs/59185109#59185109)
-    * Using the custom hook "useWindowDimensions" created by giovannipds on Stack Overflow, we were able to get the width and height of the viewport.
-* [Lime favicon and logo icon](https://www.freepik.com/icon/lemon_9712335#position=11)
-    * Designed by Dai at Freepik
-* [Cocktail images](https://www.vecteezy.com/png/19607012-cocktail-png-graphic-clipart-design)
-    * Designed by creators at Vecteezy
-* [Othneil Drew](https://github.com/othneildrew)
-    * Created an excellent README template, used here.
 
+- [useWindowDimensions custom hook](https://stackoverflow.com/questions/36862334/get-viewport-window-height-in-reactjs/59185109#59185109)
+  - Using the custom hook "useWindowDimensions" created by giovannipds on Stack Overflow, we were able to get the width and height of the viewport.
+- [Lime favicon and logo icon](https://www.freepik.com/icon/lemon_9712335#position=11)
+  - Designed by Dai at Freepik
+- [Cocktail images](https://www.vecteezy.com/png/19607012-cocktail-png-graphic-clipart-design)
+  - Designed by creators at Vecteezy
+- [Othneil Drew](https://github.com/othneildrew)
+  - Created an excellent README template, used here.
 
 <!-- Markdown links & images -->
 
